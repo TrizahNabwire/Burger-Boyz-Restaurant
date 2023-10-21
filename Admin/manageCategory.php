@@ -11,10 +11,11 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="adminHomepage.php">Manage Admin</a>
+            <a class="navbar-brand" href="adminHomepage.php">Manage Category</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
@@ -37,44 +38,7 @@
         </div>
     </nav>
 
-    <!-- Card Section -->
-    <!-- <div class="container mt-4">
-        <div class="row">
-          
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title text-center">5</h5>
-                        <h5 class="card-title text-center">Admin</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title text-center">5</h5>
-                        <h5 class="card-title text-center">Category</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title text-center">5</h5>
-                        <h5 class="card-title text-center">Food</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title text-center">5</h5>
-                        <h5 class="card-title text-center">Order</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    
 
     <!-- Include Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

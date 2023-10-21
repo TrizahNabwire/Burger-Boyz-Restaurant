@@ -25,7 +25,7 @@
                         <a class="nav-link" href="manageAdmin.php">Admin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Category</a>
+                        <a class="nav-link" href="manageCategory.php">Category</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Food</a>
