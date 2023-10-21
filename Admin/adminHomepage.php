@@ -77,6 +77,16 @@
         </div>
     </div>
 
+    <!-- Footer Section -->
+    <!-- <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ">
+                    <p>
+                      &copy; 2023 Burger Boyz. All rights reserved.
+                    </p>
+                </div> -->
+
     <!-- Include Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
