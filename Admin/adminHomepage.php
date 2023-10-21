@@ -28,10 +28,10 @@
                         <a class="nav-link" href="manageCategory.php">Category</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Food</a>
+                        <a class="nav-link" href="manageFood.php">Food</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Order</a>
+                        <a class="nav-link" href="manageOrder.php">Order</a>
                     </li>
                 </ul>
             </div>
