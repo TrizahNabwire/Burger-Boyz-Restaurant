@@ -72,7 +72,7 @@
         // Get Data From Form
         $full_name = $_POST['full_name'];
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);  //Password Encryption with MD5
 
         // SQL Query to save data into Database - admin table
 
@@ -82,6 +82,7 @@
         password = $password
         ";
         echo $sql;
+        
     }
     
 ?>

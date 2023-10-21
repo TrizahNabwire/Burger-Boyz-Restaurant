@@ -79,7 +79,7 @@
     <!-- Button to Add Admin -->
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="" class="btn btn-primary">Add Admin</a>
+    <a href="addAdmin.php" class="btn btn-primary">Add Admin</a>
 
     <!-- Table -->
     <div class="container mt-4">
