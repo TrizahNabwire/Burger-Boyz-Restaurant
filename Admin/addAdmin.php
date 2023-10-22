@@ -1,3 +1,8 @@
+<?php
+session_start();
+    include("../Authentication/connection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,12 +81,17 @@
 
         // SQL Query to save data into Database - admin table
 
-        $sql = "INSERT INTO admin SET
+        $query = "INSERT INTO admin SET
         full_name = '$full_name,
         username = '$username,
         password = $password
         ";
-        echo $sql;
+        
+        // Execute Query and Save Data in Database
+        // $result = mysqli_query($con, $query) or die(mysqli_error());
+
+        $query = "insert into admin (full_name,username,password) values ('$full_name', '$username','$password')";
+        mysqli_query($con, $query);
         
     }
     
