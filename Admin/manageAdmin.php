@@ -110,7 +110,7 @@ session_start();
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <!-- <tbody>
                 <tr>
                     <td>1</td>
                     <td>John Doe</td>
@@ -119,13 +119,63 @@ session_start();
                     &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Delete</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
                 </td>
-                </tr>
-                <tr>
+                </tr> -->
+
+                <?php
+                    // Query to get all Admin
+                    $query = "SELECT * FROM admin";
+
+                    // Execute query
+                    $result = mysqli_query($con, $query);
+
+                    // Check whether the query is executed or not
+                    if($result==TRUE)
+                    {
+                        // Count rows to check whether we have data in database
+                        $count = mysqli_num_rows($result); //function to get all rows in database
+
+                        $sn = 1;
+
+                        // check the num of rows
+                        if($count>0)
+                        {
+                            while($rows=mysqli_fetch_assoc($result))
+                            {
+
+                                // get individual data
+                                $id = $rows['id'];
+                                $full_name = $rows['full_name'];
+                                $username = $rows['username'];
+
+                                // Display the values in our table
+                                ?>
+                                
+                                <tr>
+                                <td><?php echo $sn++ ?></td>
+                                    <td><?php echo $full_name ?></td>
+                                    <td><?php echo $username ?></td>
+                                    <td>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<a href=""><button class="btn btn-primary">Update Admin</button></a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<a href=""><button class="btn btn-danger">Delete Admin</button></a>
+                                </td>
+                                </tr>
+
+                                <?php
+                            }
+
+                        }else {
+                            # code...
+                        }
+                    }
+
+                ?>
+
+                <!-- <tr>
                 <td>2</td>
                     <td>Jane Trizah</td>
                     <td>janetrizah01</td>
                     <td>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Admin</button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a href=""><button class="btn btn-primary">Update Admin</button></a>
                         &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
                 </td>
                 </tr>
@@ -146,8 +196,8 @@ session_start();
                     &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Admin</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
                 </td>
-                </tr>
-            </tbody>
+                </tr> -->
+            <!-- </tbody> -->
         </table>
     </div>
 
