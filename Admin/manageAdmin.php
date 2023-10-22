@@ -1,3 +1,8 @@
+<?php
+session_start();
+    include("../Authentication/connection.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,6 +83,19 @@
 
     <!-- Button to Add Admin -->
     <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <?php
+    if (isset($_SESSION['add'])) {
+        # code...
+        echo $_SESSION['add']; //Displaying session message
+
+        unset($_SESSION['add']); //Removing session message
+    }
+
+    ?>
+    <br>
+
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="addAdmin.php" class="btn btn-primary">Add Admin</a>
 
