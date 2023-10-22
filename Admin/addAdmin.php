@@ -44,6 +44,17 @@ session_start();
 
     <div class="container mt-4">
         <h2>Add Admin</h2>
+
+        <?php
+    if (isset($_SESSION['add'])) //checking whether the session is set or not
+    { 
+        # code...
+        echo $_SESSION['add']; //Displaying session message if set
+
+        unset($_SESSION['add']); //Removing session message
+    }
+
+    ?>
         <!-- Admin Registration Form Table -->
         <form method="post">
             <table class="table">
@@ -91,7 +102,26 @@ session_start();
         // $result = mysqli_query($con, $query) or die(mysqli_error());
 
         $query = "insert into admin (full_name,username,password) values ('$full_name', '$username','$password')";
-        mysqli_query($con, $query);
+        $result= mysqli_query($con, $query) or die(mysqli_error());
+
+        if($result==TRUE)
+        {
+            // Create Session Variable to display message
+            $_SESSION['add'] = "Admin Added Successfully";
+
+            // Redirect
+            header("Location: manageAdmin.php");
+            die;
+            
+        }else {
+            # code...
+            // Create Session Variable to display message
+            $_SESSION['add'] = "Failed to Add Admin";
+
+            // Redirect
+            header("Location: addAdmin.php");
+            die;
+        }
         
     }
     
