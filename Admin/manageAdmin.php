@@ -156,7 +156,7 @@ session_start();
                                     <td><?php echo $username ?></td>
                                     <td>
                                         &nbsp;&nbsp;&nbsp;&nbsp;<a href=""><button class="btn btn-primary">Update Admin</button></a>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<a href=""><button class="btn btn-danger">Delete Admin</button></a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteAdmin.php?id=<?php echo $id?>"><button class="btn btn-danger">Delete Admin</button></a>
                                 </td>
                                 </tr>
 
