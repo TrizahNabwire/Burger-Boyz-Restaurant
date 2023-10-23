@@ -84,7 +84,7 @@ session_start();
     <!-- Button to Add Admin -->
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
+    
     <?php
     if (isset($_SESSION['add'])) {
         # code...
@@ -93,8 +93,15 @@ session_start();
         unset($_SESSION['add']); //Removing session message
     }
 
+    if (isset($_SESSION['delete']))
+     {
+        # code...
+        echo $_SESSION['delete'];
+        unset($_SESSION['delete']);
+    }
+
     ?>
-    <br>
+    <br><br>
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="addAdmin.php" class="btn btn-primary">Add Admin</a>
