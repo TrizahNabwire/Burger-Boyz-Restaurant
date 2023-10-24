@@ -107,6 +107,27 @@ session_start();
         unset($_SESSION['update']);
     }
 
+    if (isset($_SESSION['user-not-found']))
+     {
+        # code...
+        echo $_SESSION['user-not-found'];
+        unset($_SESSION['user-not-found']);
+    }
+
+    if (isset($_SESSION['password-not-match']))
+    {
+       # code...
+       echo $_SESSION['password-not-match'];
+       unset($_SESSION['password-not-match']);
+   }
+
+   if (isset($_SESSION['change-password']))
+   {
+      # code...
+      echo $_SESSION['change-password'];
+      unset($_SESSION['change-password']);
+  }
+
     ?>
     <br><br>
 
@@ -169,7 +190,8 @@ session_start();
                                     <td><?php echo $full_name ?></td>
                                     <td><?php echo $username ?></td>
                                     <td>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateAdmin.php?id=<?php echo $id?>"><button class="btn btn-primary">Update Admin</button></a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="changePassword.php?id=<?php echo $id?>"><button class="btn btn-primary">Change Password</button></a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateAdmin.php?id=<?php echo $id?>"><button class="btn btn-success">Update Admin</button></a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteAdmin.php?id=<?php echo $id?>"><button class="btn btn-danger">Delete Admin</button></a>
                                 </td>
                                 </tr>
