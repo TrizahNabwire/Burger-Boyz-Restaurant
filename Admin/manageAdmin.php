@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Homepage</title>
+    <title>Manage Admin</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
@@ -84,7 +84,7 @@ session_start();
     <!-- Button to Add Admin -->
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
+
     <?php
     if (isset($_SESSION['add'])) {
         # code...
@@ -98,6 +98,13 @@ session_start();
         # code...
         echo $_SESSION['delete'];
         unset($_SESSION['delete']);
+    }
+
+    if (isset($_SESSION['update']))
+     {
+        # code...
+        echo $_SESSION['update'];
+        unset($_SESSION['update']);
     }
 
     ?>
@@ -162,7 +169,7 @@ session_start();
                                     <td><?php echo $full_name ?></td>
                                     <td><?php echo $username ?></td>
                                     <td>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;<a href=""><button class="btn btn-primary">Update Admin</button></a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateAdmin.php?id=<?php echo $id?>"><button class="btn btn-primary">Update Admin</button></a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteAdmin.php?id=<?php echo $id?>"><button class="btn btn-danger">Delete Admin</button></a>
                                 </td>
                                 </tr>

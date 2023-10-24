@@ -102,7 +102,8 @@ session_start();
         // $result = mysqli_query($con, $query) or die(mysqli_error());
 
         $query = "insert into admin (full_name,username,password) values ('$full_name', '$username','$password')";
-        $result= mysqli_query($con, $query) or die(mysqli_error());
+        $result= mysqli_query($con, $query) ;
+        // or die(mysqli_error());
 
         if($result==TRUE)
         {
