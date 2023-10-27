@@ -118,19 +118,19 @@ session_start();
                             // check whether query executed or not
                             if ($result==TRUE) {
                                 # code...
-                                $_SESSION['change-password'] = "<div class='text-success'>Password Changed Successfully</div>";
+                                $_SESSION['change-password'] = "<div class='text-success text-center'>Password Changed Successfully</div>";
                                 header("Location: manageAdmin.php");
                                 
                             }
                             else {
                                 # code...
-                                $_SESSION['change-password'] = "<div class='text-danger'>Failed to Change Password</div>";
+                                $_SESSION['change-password'] = "<div class='text-danger text-center'>Failed to Change Password</div>";
                                 header("Location: manageAdmin.php");
                             }
                         }
                         else {
                             // redirect to manage Admin
-                            $_SESSION['password-not-match'] = "<div class='text-danger'>Password Did Not Match</div>";
+                            $_SESSION['password-not-match'] = "<div class='text-danger text-center'>Password Did Not Match</div>";
                         header("Location: manageAdmin.php");
                         }
                     }

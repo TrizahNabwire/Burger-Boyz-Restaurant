@@ -124,7 +124,7 @@ session_start();
         if ($result==TRUE) {
             # code...
             // Query executed and Admin updated
-            $_SESSION['update'] = "<div class ='text-success'>Admin Updated Successfully </div>";
+            $_SESSION['update'] = "<div class ='text-success text-center'>Admin Updated Successfully </div>";
 
             // Redirect
             header("Location: manageAdmin.php");
@@ -133,7 +133,7 @@ session_start();
         else {
             
             // Failed to update Admin
-            $_SESSION['update'] = "<div class ='text-danger'>Failed to Update Admin </div>";
+            $_SESSION['update'] = "<div class ='text-danger text-center'>Failed to Update Admin </div>";
 
             // Redirect
             header("Location: manageAdmin.php");
