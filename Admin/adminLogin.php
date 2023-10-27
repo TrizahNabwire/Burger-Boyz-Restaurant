@@ -36,6 +36,13 @@ session_start();
                         unset($_SESSION['admin-login']);
                     }
 
+                    if (isset($_SESSION['not-logged-in'])) 
+                    {
+                        # code...
+                        echo  $_SESSION['not-logged-in'];
+                        unset($_SESSION['not-logged-in']);
+                    }
+
                     ?>
 
                     <div class="card-body">
@@ -86,6 +93,8 @@ if (isset($_POST['submit'])) {
         # code...
         // user available
         $_SESSION['admin-login'] = "<div class='text-success text-center'>Login Successful.</div>";
+
+        $_SESSION['user'] = $username; //checks whether the user is logged in or not and logout will unset it
 
         // redirect to Admin Homepage
         header("Location: adminHomepage.php");

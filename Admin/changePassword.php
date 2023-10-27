@@ -1,6 +1,7 @@
 <?php
 session_start();
     include("../Authentication/connection.php");
+    include("adminLoginCheck.php");
 ?>
 
 <!DOCTYPE html>

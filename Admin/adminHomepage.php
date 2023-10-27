@@ -1,3 +1,7 @@
+<?php
+include("../Authentication/connection.php");
+// include("adminLoginCheck.php");  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -2,6 +2,7 @@
 <?php
 session_start();
     include("../Authentication/connection.php");
+    include("adminLoginCheck.php");
 
 // get the id of Admin to be deleted
  $id = $_GET['id'];
