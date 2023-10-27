@@ -38,6 +38,14 @@
         </div>
     </nav>
 
+    <?php
+    if (isset($_SESSION['admin-login'])) {
+        # code...
+        echo $_SESSION['admin-login'];
+        unset($_POST['admin-login']);
+    }
+    ?>
+
     <!-- Card Section -->
     <div class="container mt-4">
         <div class="row">
