@@ -54,17 +54,17 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item ">
-                <a class="nav-link" href="index.html">Home </a>
+              <li class="nav-item">
+                <a class="nav-link" href="homepage.php">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu.html">Menu</a>
+                <a class="nav-link" href="menu.php">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.php">About</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="about.html">About <span class="sr-only">(current)</span> </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="book.html">Book Table</a>
+                <a class="nav-link" href="book.php">Book Table <span class="sr-only">(current)</span> </a>
               </li>
             </ul>
             <div class="user_option">
@@ -78,7 +78,6 @@
                       <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
                    c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
                     </g>
-                    <g>
                   </g>
                   <g>
                     <g>
@@ -142,38 +141,66 @@
     <!-- end header section -->
   </div>
 
-  <!-- about section -->
-
-  <section class="about_section layout_padding">
-    <div class="container  ">
-
+  <!-- book section -->
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Book A Table
+        </h2>
+      </div>
       <div class="row">
-        <div class="col-md-6 ">
-          <div class="img-box">
-            <img src="images/about-img.png" alt="">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="">
+              <div>
+                <input type="text" class="form-control" placeholder="Your Name" />
+              </div>
+              <div>
+                <input type="text" class="form-control" placeholder="Phone Number" />
+              </div>
+              <div>
+                <input type="email" class="form-control" placeholder="Your Email" />
+              </div>
+              <div>
+                <select class="form-control nice-select wide">
+                  <option value="" disabled selected>
+                    How many persons?
+                  </option>
+                  <option value="">
+                    2
+                  </option>
+                  <option value="">
+                    3
+                  </option>
+                  <option value="">
+                    4
+                  </option>
+                  <option value="">
+                    5
+                  </option>
+                </select>
+              </div>
+              <div>
+                <input type="date" class="form-control">
+              </div>
+              <div class="btn_box">
+                <button>
+                  Book Now
+                </button>
+              </div>
+            </form>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                We Are Burger Boyz
-              </h2>
-            </div>
-            <p>
-              Welcome to Burger Boyz Restaurant, your culinary playground for the perfect blend of flavors and a world of choices! From mouthwatering, wood-fired pizzas and gourmet burgers that redefine satisfaction to delightful pasta dishes and golden, crispy fries, we've crafted a menu that caters to every craving, ensuring an unforgettable dining experience that tantalizes taste buds. 
-              Come for the variety, stay for the deliciousness, and savor the essence of great food in one extraordinary destination.
-            </p>
-            <a href="menu.html">
-              Order Now
-            </a>
+          <div class="map_container ">
+            <div id="googleMap"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- end about section -->
+  <!-- end book section -->
 
   <!-- footer section -->
   <footer class="footer_section">
@@ -208,7 +235,7 @@
         </div>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
-            <a href="index.html" class="footer-logo">
+            <a href="" class="footer-logo">
               Burger Boyz
             </a>
             <p>
@@ -249,7 +276,7 @@
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
           <a href="https://github.com/TrizahNabwire">Burger Boyz</a><br><br>
-          
+         
         </p>
       </div>
     </div>
