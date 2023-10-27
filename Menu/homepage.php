@@ -4,7 +4,9 @@ session_start();
     include("../Authentication/connection.php");
     include("../Authentication/functions.php");
 
-    $user_data = check_login($con);
+
+    // Forces a user to login on homepage
+    // $user_data = check_login($con); 
 
     // store user_id 
     // $_SESSION; 

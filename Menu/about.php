@@ -11,24 +11,24 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <link rel="shortcut icon" href="../images/f7.png" type="">
 
   <title> Burger Boyz </title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- nice select  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
 
 </head>
 
@@ -36,13 +36,13 @@
 
   <div class="hero_area">
     <div class="bg-box">
-      <img src="images/hero-bg.jpg" alt="">
+      <img src="../images/hero-bg.jpg" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="homepage.php">
             <span>
               Burger Boyz
             </span>
@@ -150,7 +150,7 @@
       <div class="row">
         <div class="col-md-6 ">
           <div class="img-box">
-            <img src="images/about-img.png" alt="">
+            <img src="../images/about-img.png" alt="">
           </div>
         </div>
         <div class="col-md-6">
@@ -164,7 +164,7 @@
               Welcome to Burger Boyz Restaurant, your culinary playground for the perfect blend of flavors and a world of choices! From mouthwatering, wood-fired pizzas and gourmet burgers that redefine satisfaction to delightful pasta dishes and golden, crispy fries, we've crafted a menu that caters to every craving, ensuring an unforgettable dining experience that tantalizes taste buds. 
               Come for the variety, stay for the deliciousness, and savor the essence of great food in one extraordinary destination.
             </p>
-            <a href="menu.html">
+            <a href="#">
               Order Now
             </a>
           </div>
@@ -208,7 +208,7 @@
         </div>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
-            <a href="index.html" class="footer-logo">
+            <a href="homepage.php" class="footer-logo">
               Burger Boyz
             </a>
             <p>
@@ -248,7 +248,7 @@
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://github.com/TrizahNabwire">Burger Boyz</a><br><br>
+          <a href="https://trizahnabwire.unaux.com/">Burger Boyz</a><br><br>
           
         </p>
       </div>

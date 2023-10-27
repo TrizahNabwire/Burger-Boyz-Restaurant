@@ -11,24 +11,24 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <link rel="shortcut icon" href="../images/f7.png" type="">
 
   <title> Burger Boyz </title>
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <!-- nice select  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="../css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="../css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="../css/responsive.css" rel="stylesheet" />
 
 </head>
 
@@ -36,13 +36,13 @@
 
   <div class="hero_area">
     <div class="bg-box">
-      <img src="images/hero-bg.jpg" alt="">
+      <img src="../images/hero-bg.jpg" alt="">
     </div>
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="homepage.php">
             <span>
               Burger Boyz
             </span>
@@ -165,7 +165,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/f1.png" alt="">
+                  <img src="../images/f1.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -241,7 +241,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/f2.png" alt="">
+                  <img src="../images/f2.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -318,7 +318,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/f3.png" alt="">
+                  <img src="../images/f3.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -394,7 +394,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/f4.png" alt="">
+                  <img src="../images/f4.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -470,7 +470,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/f5.png" alt="">
+                  <img src="../images/f5.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -546,7 +546,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/f6.png" alt="">
+                  <img src="../images/f6.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -622,7 +622,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/f7.png" alt="">
+                  <img src="../images/f7.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -699,7 +699,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/f8.png" alt="">
+                  <img src="../images/f8.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -776,7 +776,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/f9.png" alt="">
+                  <img src="../images/f9.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -933,7 +933,7 @@
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://github.com/TrizahNabwire">Burger Boyz</a><br><br>
+          <a href="https://trizahnabwire.unaux.com/">Burger Boyz</a><br><br>
          
         </p>
       </div>
