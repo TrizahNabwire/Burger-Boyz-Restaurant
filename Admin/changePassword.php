@@ -37,6 +37,9 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="manageOrder.php">Order</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="adminLogout.php">Logout</a>
+                    </li>
                 </ul>
             </div>
         </div>
