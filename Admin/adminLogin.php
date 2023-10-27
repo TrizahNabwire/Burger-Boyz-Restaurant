@@ -26,8 +26,8 @@ session_start();
                     <div class="card-header">
                         Login
                     </div>
+                    <br>
 
-                    <br><br>
 
                     <?php
                     if (isset($_SESSION['admin-login'])) {
@@ -36,8 +36,8 @@ session_start();
                         unset($_SESSION['admin-login']);
                     }
 
-?>
-<br><br>
+                    ?>
+
                     <div class="card-body">
                         <form method="post">
                             <div class="form-group">
@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
     if ($count==1) {
         # code...
         // user available
-        $_SESSION['admin-login'] = "<div class='text-success-center'>Login Successful.</div>";
+        $_SESSION['admin-login'] = "<div class='text-success text-center'>Login Successful.</div>";
 
         // redirect to Admin Homepage
         header("Location: adminHomepage.php");
@@ -93,7 +93,7 @@ if (isset($_POST['submit'])) {
     }else {
         # code...
         // user not available and login failed
-        $_SESSION['admin-login'] = "<div class='text-danger-center'>Username and Password did not match</div>";
+        $_SESSION['admin-login'] = "<div class='text-danger text-center'>Username and Password did not match</div>";
 
         // redirect
         header("Location: adminLogin.php");
