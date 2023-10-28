@@ -47,18 +47,21 @@ session_start();
         </div>
     </nav>
 
-    <?php
-    if (isset($_SESSION['add']))
-    {
-       echo $_SESSION['add'];
-       unset($_SESSION['add']);
-   }
-   ?>
+    
 
     <!-- Button to Add Category -->
-    <br>
+    <br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="" class="btn btn-primary">Add Category</a>
+    <a href="addCategory.php" class="btn btn-primary">Add Category</a>
+    <br>
+    <?php
+    if (isset($_SESSION['addcategory']))
+    {
+       echo $_SESSION['addcategory'];
+       unset($_SESSION['addcategory']);
+   }
+   ?>
+   <br>
 
     <!-- Table -->
     <div class="container mt-4">

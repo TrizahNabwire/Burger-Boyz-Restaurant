@@ -50,10 +50,10 @@ session_start();
         <h2>Add Category</h2>
         <br>
         <?php
-        if (isset($_SESSION['add']))
+        if (isset($_SESSION['addcategory']))
          {
-            echo $_SESSION['add'];
-            unset($_SESSION['add']);
+            echo $_SESSION['addcategory'];
+            unset($_SESSION['addcategory']);
         }
         ?>
         <br>
