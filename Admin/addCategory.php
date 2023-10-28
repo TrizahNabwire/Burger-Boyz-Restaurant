@@ -1,7 +1,7 @@
 <?php
 session_start();
-    include("../../Authentication/connection.php");
-    include("../adminLoginCheck.php")
+    include("../Authentication/connection.php");
+    include("adminLoginCheck.php")
 ?>
 
 <!DOCTYPE html>
@@ -24,22 +24,22 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="../adminHomepage.php">Home</a>
+                        <a class="nav-link" href="adminHomepage.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../manageAdmin.php">Admin</a>
+                        <a class="nav-link" href="manageAdmin.php">Admin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../manageCategory.php">Category</a>
+                        <a class="nav-link" href="manageCategory.php">Category</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../manageFood.php">Food</a>
+                        <a class="nav-link" href="manageFood.php">Food</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../manageOrder.php">Order</a>
+                        <a class="nav-link" href="manageOrder.php">Order</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../adminLogout.php">Logout</a>
+                        <a class="nav-link" href="adminLogout.php">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -49,8 +49,16 @@ session_start();
     <div class="container mt-4">
         <h2>Add Category</h2>
         <br>
+        <?php
+        if (isset($_SESSION['add']))
+         {
+            echo $_SESSION['add'];
+            unset($_SESSION['add']);
+        }
+        ?>
+        <br>
     <div class="container">
-        <form method="post">
+    <form method="post">
         <table class="table">
             <tr>
                 <td>Title</td>
@@ -91,7 +99,7 @@ session_start();
                 </td>
             </tr>
         </table>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
 </div>
 </body>
@@ -114,6 +122,24 @@ if (isset($_POST['submit'])) {
         $active = $_POST['active'];
     }else {
         $active = "No";
+    }
+
+    // creating SQL Query to insert Category into database
+    $query = "INSERT INTO category SET
+    title = '$title',
+    featured = '$featured',
+    active = '$active'
+    ";
+
+    // Executing the Query and saving in Database
+    $result = mysqli_query($con,$query);
+
+    if ($result==true) {
+        $_SESSION['addcategory'] = "<div class='text-success text-center'>Category Added Succesfully</div>";
+        header("Location: manageCategory.php");
+    }else {
+        $_SESSION['addcategory'] = "<div class='text-danger text-center'>Failed to AddCategory Added Succesfully</div>";
+        header("Location: addCategory.php");
     }
 
 }

@@ -47,6 +47,14 @@ session_start();
         </div>
     </nav>
 
+    <?php
+    if (isset($_SESSION['add']))
+    {
+       echo $_SESSION['add'];
+       unset($_SESSION['add']);
+   }
+   ?>
+
     <!-- Button to Add Category -->
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
