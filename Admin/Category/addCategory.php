@@ -50,11 +50,11 @@ session_start();
         <h2>Add Category</h2>
         <br>
     <div class="container">
-        <form method="POST">
+        <form method="post">
         <table class="table">
             <tr>
                 <td>Title</td>
-                <td><input type="text" class="form-control" id="titlet" name="title"></td>
+                <td><input type="text" class="form-control" id="titlet" name="title" placeholder="Category Title"></td>
             </tr>
             <tr>
                 <td>Featured</td>
@@ -93,6 +93,28 @@ session_start();
         </table>
         <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-    </div>
+</div>
 </body>
 </html>
+<?php
+if (isset($_POST['submit'])) {
+    # get the value form category form
+    $title = $_POST['title'];
+
+    // for radio input, we need to check whether the button is selected or not
+    if (isset($_POST['featured'])) {
+        # get the value from form
+        $featured = $_POST['featured'];
+    }else {
+        // set the default value
+        $featured = "No";
+    }
+
+    if (isset($_POST['active'])) {
+        $active = $_POST['active'];
+    }else {
+        $active = "No";
+    }
+
+}
+?>
