@@ -1,7 +1,7 @@
 <?php
 session_start();
     include("../Authentication/connection.php");
-    include("adminLoginCheck.php")
+    // include("adminLoginCheck.php");
 ?>
 
 <!DOCTYPE html>
@@ -23,13 +23,13 @@ session_start();
             </button> -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="adminHomepage.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="manageAdmin.php">Admin</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="manageCategory.php">Category</a>
                     </li>
                     <li class="nav-item">
@@ -62,7 +62,7 @@ session_start();
             unset($_SESSION['upload']);
         }
         ?>
-        <br>
+        <!-- <br> -->
     <div class="container">
         <!--  enable file uploads within a form and ensure that the form data is properly encoded for file uploads, you should include the enctype="multipart/form-data" -->
     <form method="post" enctype="multipart/form-data">
@@ -117,16 +117,16 @@ session_start();
         </table>
         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
 </form>
-</div>
-</body>
-</html>
+
 <?php
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) 
+{
     # get the value form category form
     $title = $_POST['title'];
 
     // for radio input, we need to check whether the button is selected or not
-    if (isset($_POST['featured'])) {
+    if (isset($_POST['featured'])) 
+    {
         # get the value from form
         $featured = $_POST['featured'];
     }else {
@@ -134,16 +134,19 @@ if (isset($_POST['submit'])) {
         $featured = "No";
     }
 
-    if (isset($_POST['active'])) {
+    if (isset($_POST['active'])) 
+    {
         $active = $_POST['active'];
-    }else {
+    }
+    else 
+    {
         $active = "No";
     }
 
     // check whether image is selected or not and set the value for the image
     //print_r($_FILES['image']);
-
     //die(); //break the echo
+
     if (isset($_FILES['image']['name']))
      {
         // upload the image
@@ -153,14 +156,14 @@ if (isset($_POST['submit'])) {
         $destination_path = "../images/category".$image_name;
 
         // upload the image
-        $upload = move_uploaded_file($source_path,$destination_path);
+        $upload = move_uploaded_file($source_path, $destination_path);
 
         // check whether the image is uploaded or not
         // and if the image is not uploaded then we will stop the process and redirect with error message
         if ($upload==false)
          {
             # set message
-            $_SESSION['upload'] = "<div class='text-danger text-center'>Failed to upload Image.</div>";
+            $_SESSION['upload'] = "<div class ='text-danger text-center'> Failed to Upload Image. </div>";
             header("Location: addCategory.php");
             // stop the process
             die();
@@ -168,7 +171,7 @@ if (isset($_POST['submit'])) {
 
     }else {
         // don't upload image and set the image_name value as blank
-        $image_name = "";
+        $image_name = " ";
     }
 
     // creating SQL Query to insert Category into database
@@ -184,12 +187,17 @@ if (isset($_POST['submit'])) {
 
     if ($result==true)
      {
-        $_SESSION['addcategory'] = "<div class='text-success text-center'>Category Added Succesfully</div>";
+        $_SESSION['addcategory'] = "<div class='text-danger text-center'>Category Added Successfully</div>";
         header("Location: manageCategory.php");
+        
     }else {
         $_SESSION['addcategory'] = "<div class='text-danger text-center'>Failed to Add Category</div>";
         header("Location: addCategory.php");
+        die();
     }
 
 }
 ?>
+</div>
+</body>
+</html>
