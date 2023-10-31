@@ -24,13 +24,13 @@ session_start();
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="adminHomepage.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="manageAdmin.php">Admin</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="manageCategory.php">Category</a>
                     </li>
                     <li class="nav-item">
@@ -69,22 +69,79 @@ session_start();
             <thead>
                 <tr>
                     <th>SN</th>
-                    <th>Full Name</th>
-                    <th>Username</th>
+                    <th>Title</th>
+                    <th>Image</th>
+                    <th>Featured</th>
+                    <th>Active</th>
                     <th>Action</th>
                 </tr>
             </thead>
+            <?php
+            // Query to get all categories from database
+            $query = "SELECT * FROM category";
+
+            // execute Query
+            $result = mysqli_query($con, $query);
+
+            // count rows
+            $count = mysqli_num_rows($result);
+
+            // create serial number variable and assign value as 1
+            $sn = 1;
+
+            // check whether we have data in database or not
+            if($count>0){
+                // get the data and display
+                while ($row=mysqli_fetch_assoc($result)) {
+                    $id = $row['id'];
+                    $title = $row['title'];
+                    $image_name = $row['image_name'];
+                    $featured = $row['featured'];
+                    $active = $row['active'];
+                    ?>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>johndoe123</td>
+                    <td><?php echo $sn++ ?></td>
+                    <td><?php echo $title ?></td>
                     <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Delete</button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
+                        <?php
+                        //  echo $image_name 
+                        // check whether image name is available or not
+                        if($image_name!=""){
+                            // display the image
+                            ?>
+                            <img src="images/Category <?php echo $image_name; ?>" alt="" width="100px">
+                            <?php
+                        }else{
+                            // display the message
+                            echo "<div class='text-danger text-center>Image Not Added</div>";
+                        }
+                        ?>
+                    </td>
+                    <td><?php echo $featured ?></td>
+                    <td><?php echo $active ?></td>
+                    <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Category</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Category</button>
                 </td>
                 </tr>
+            </tbody>
+
+                    <?php
+                }
+
+            }else{
+                // display message inside table
+                ?>
                 <tr>
+                    <td colspan="6"><div class="text-danger text-center">No Category Added</div></td>
+                </tr>
+                <?php
+                
+            }
+            ?>
+            
+                <!-- <tr>
                 <td>2</td>
                     <td>Jane Trizah</td>
                     <td>janetrizah01</td>
@@ -110,7 +167,7 @@ session_start();
                     &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Admin</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
                 </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
 </div>

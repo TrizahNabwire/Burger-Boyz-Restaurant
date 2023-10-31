@@ -62,10 +62,10 @@ session_start();
             unset($_SESSION['upload']);
         }
         ?>
-        <!-- <br> -->
+        <br>
     <div class="container">
         <!--  enable file uploads within a form and ensure that the form data is properly encoded for file uploads, you should include the enctype="multipart/form-data" -->
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" action="">
         <table class="table">
             <tr>
                 <td>Title</td>
@@ -75,8 +75,8 @@ session_start();
                 <td>Select Image</td>
                 <td>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="imageInput" name="image">
-                        <label class="custom-file-label" for="imageInput" name="image">Choose file</label>
+                        <input type="file" class="custom-file-input" id="image" name="image">
+                        <label class="custom-file-label" for="image" name="image">Choose file</label>
                     </div>
                 </td>
             </tr>
@@ -144,7 +144,7 @@ if (isset($_POST['submit']))
     }
 
     // check whether image is selected or not and set the value for the image
-    //print_r($_FILES['image']);
+    // print_r($_FILES['image']);
     //die(); //break the echo
 
     if (isset($_FILES['image']['name']))
@@ -152,6 +152,13 @@ if (isset($_POST['submit']))
         // upload the image
         // to upload the image we need image_name, source path and destination path
         $image_name = $_FILES['image']['name'];
+
+        // Auto Rename our image
+        // Get the extension of our image jpg, png, gif -> yummyfood1.jpg
+        $ext = end(explode('.', $image_name)); 
+        // Renaming the Image
+        $image_name = "Food_Category_".rand(000, 999).'.'.$ext; //Food_category_748.jpg
+
         $source_path = $_FILES['image']['tmp_name'];
         $destination_path = "../images/category".$image_name;
 
@@ -183,14 +190,16 @@ if (isset($_POST['submit']))
     ";
 
     // Executing the Query and saving in Database
-    $result = mysqli_query($con,$query);
+    $result = mysqli_query($con, $query);
 
     if ($result==true)
      {
-        $_SESSION['addcategory'] = "<div class='text-danger text-center'>Category Added Successfully</div>";
+        // Query executed and category added
+        $_SESSION['addcategory'] = "<div class='text-success text-center'>Category Added Successfully</div>";
         header("Location: manageCategory.php");
         
     }else {
+        // Failed to Add category
         $_SESSION['addcategory'] = "<div class='text-danger text-center'>Failed to Add Category</div>";
         header("Location: addCategory.php");
         die();
