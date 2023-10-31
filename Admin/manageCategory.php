@@ -122,7 +122,7 @@ session_start();
                     <td><?php echo $active ?></td>
                     <td>
                     &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Category</button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Category</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteCategory.php?id=<?php echo $id; ?>&image_name =<?php echo $image_name; ?>"><button class="btn btn-danger">Delete Category</button></a>
                 </td>
                 </tr>
             </tbody>
