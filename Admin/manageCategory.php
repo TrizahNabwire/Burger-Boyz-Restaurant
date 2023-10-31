@@ -60,6 +60,18 @@ session_start();
        echo $_SESSION['addcategory'];
        unset($_SESSION['addcategory']);
    }
+
+   if (isset($_SESSION['remove'])) {
+    # code...
+    echo $_SESSION['remove'];
+    unset($_SESSION['remove']);
+   }
+
+   if (isset($_SESSION['delete'])) {
+    # code...
+    echo $_SESSION['delete'];
+    unset($_SESSION['delete']);
+   }
    ?>
    <br>
 
