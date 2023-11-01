@@ -72,6 +72,12 @@ session_start();
     echo $_SESSION['delete'];
     unset($_SESSION['delete']);
    }
+
+   if (isset($_SESSION['no-category-found'])) {
+    # code...
+    echo $_SESSION['no-category-found'];
+    unset($_SESSION['no-category-found']);
+   }
    ?>
    <br>
 
@@ -133,7 +139,7 @@ session_start();
                     <td><?php echo $featured ?></td>
                     <td><?php echo $active ?></td>
                     <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Category</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateCategory.php?id=<?php echo $id ?>"><button class="btn btn-primary">Update Category</button></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteCategory.php?id=<?php echo $id; ?>&image_name =<?php echo $image_name; ?>"><button class="btn btn-danger">Delete Category</button></a>
                 </td>
                 </tr>

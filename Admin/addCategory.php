@@ -1,7 +1,7 @@
 <?php
 session_start();
     include("../Authentication/connection.php");
-    // include("adminLoginCheck.php");
+    include("adminLoginCheck.php");
 ?>
 
 <!DOCTYPE html>
@@ -153,28 +153,33 @@ if (isset($_POST['submit']))
         // to upload the image we need image_name, source path and destination path
         $image_name = $_FILES['image']['name'];
 
-        // Auto Rename our image
-        // Get the extension of our image jpg, png, gif -> yummyfood1.jpg
-        $ext = end(explode('.', $image_name)); 
-        // Renaming the Image
-        $image_name = "Food_Category_".rand(000, 999).'.'.$ext; //Food_category_748.jpg
+        // upload image only if image is selected
+        if ($image_name!="") {
+                
 
-        $source_path = $_FILES['image']['tmp_name'];
-        $destination_path = "../images/category".$image_name;
+            // Auto Rename our image
+            // Get the extension of our image jpg, png, gif -> yummyfood1.jpg
+            $ext = end(explode('.', $image_name)); 
+            // Renaming the Image
+            $image_name = "Food_Category_".rand(000, 999).'.'.$ext; //Food_category_748.jpg
 
-        // upload the image
-        $upload = move_uploaded_file($source_path, $destination_path);
+            $source_path = $_FILES['image']['tmp_name'];
+            $destination_path = "../images/category".$image_name;
 
-        // check whether the image is uploaded or not
-        // and if the image is not uploaded then we will stop the process and redirect with error message
-        if ($upload==false)
-         {
-            # set message
-            $_SESSION['upload'] = "<div class ='text-danger text-center'> Failed to Upload Image. </div>";
-            header("Location: addCategory.php");
-            // stop the process
-            die();
-        }
+            // upload the image
+            $upload = move_uploaded_file($source_path, $destination_path);
+
+            // check whether the image is uploaded or not
+            // and if the image is not uploaded then we will stop the process and redirect with error message
+            if ($upload==false)
+            {
+                # set message
+                $_SESSION['upload'] = "<div class ='text-danger text-center'> Failed to Upload Image. </div>";
+                header("Location: addCategory.php");
+                // stop the process
+                die();
+            }
+    }
 
     }else {
         // don't upload image and set the image_name value as blank
