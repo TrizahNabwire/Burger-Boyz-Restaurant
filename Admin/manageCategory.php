@@ -79,10 +79,22 @@ session_start();
     unset($_SESSION['no-category-found']);
    }
 
+   if (isset($_SESSION['upload'])) {
+    # code...
+    echo $_SESSION['upload'];
+    unset($_SESSION['upload']);
+   }
+
    if (isset($_SESSION['update'])) {
     # code...
     echo $_SESSION['update'];
     unset($_SESSION['update']);
+   }
+
+   if (isset($_SESSION['failed-remove'])) {
+    # code...
+    echo $_SESSION['failed-remove'];
+    unset($_SESSION['failed-remove']);
    }
    ?>
    <br>

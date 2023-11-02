@@ -162,11 +162,66 @@ if (isset($_POST['submit'])) {
     $active = $_POST['active'];
 
     // updating new image if selected
+    // check whether image is selected or not
+    if (isset($_FILES['image']['name'])) {
+        // get the image details
+        $image_name = $_FILES['image']['name'];
+
+        // check whether the image is available or not
+        if ($image_name!="") {
+            // image is available
+            // upload the new image
+
+            // Auto Rename our image
+            // Get the extension of our image jpg, png, gif -> yummyfood1.jpg
+            $ext = end(explode('.', $image_name)); 
+            // Renaming the Image
+            $image_name = "Food_Category_".rand(000, 999).'.'.$ext; //Food_category_748.jpg
+
+            $source_path = $_FILES['image']['tmp_name'];
+            $destination_path = "../images/category".$image_name;
+
+            // upload the image
+            $upload = move_uploaded_file($source_path, $destination_path);
+
+            // check whether the image is uploaded or not
+            // and if the image is not uploaded then we will stop the process and redirect with error message
+            if ($upload==false)
+            {
+                # set message
+                $_SESSION['upload'] = "<div class ='text-danger text-center'> Failed to Upload Image. </div>";
+                header("Location: manageCategory.php");
+                // stop the process
+                die();
+            }
+            // remove the current image if available
+            if($current_image!=""){
+                $remove_path = "../images/category/".$current_image;
+                $remove = unlink($remove_path);
+    
+                // check whether the image is removed or not
+                // if failed to remove then display message and stop the process
+                if ($remove==false) {
+                    # code...
+                    $_SESSION['failed-remove'] = "<div class='text-danger text-center'>Failed to remove current image.</div>";
+                    header("Location: manageCategory.php");
+                    die();
+                }
+
+            }
+           
+        }else{
+            $image_name = $current_image;
+        }
+    }else {
+        $image_name = $current_image;
+    }
 
 
     // update database
     $query1 = "UPDATE category SET
     title = '$title',
+    image_name = '$image_name',
     featured = '$featured',
     active = '$active'
     WHERE id = $id
