@@ -83,9 +83,39 @@ session_start();
                     <td>Category</td>
                     <td>
                         <select name="category" class="form-control" required>
-                            <option value="Burger">Burger</option>
+                            <?php
+                            // <!-- display categories from database -->
+                            // <!-- create SQL to get all active categories from database -->
+                            $query = "SELECT * FROM category WHERE active='Yes'";
+
+                            // execute query
+                            $result = mysqli_query($con,$query);
+
+                            // count whether we have categories or not
+                            $count = mysqli_num_rows($result);
+
+                            // if count > 0, we have categories else we do not have categories
+                            if ($count>0) {
+                                // we have categories
+                                while ($row=mysqli_fetch_assoc($result)) {
+                                    // get the details of categories
+                                    $id = $row['id'];
+                                    $title = $row['title'];
+                                    ?>
+                                    <option value="<?php echo $id; ?>"><?php echo $title; ?></option>
+                                    <?php
+                                }
+                                ?>
+                                <option value="0">No Category Found</option>
+                                <?php
+                                
+                            }else{
+
+                            }
+                            ?>
+                            <!-- <option value="Burger">Burger</option>
                             <option value="Pizza">Pizza</option>
-                            <option value="Pasta">Pasta</option>
+                            <option value="Pasta">Pasta</option> -->
                             </select>
                     </td>
                 </tr>
