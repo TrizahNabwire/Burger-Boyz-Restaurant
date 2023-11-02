@@ -157,3 +157,52 @@ session_start();
             <input type="submit" value="submit" class="btn btn-primary">
         </form>
     </div>
+<?php
+// check whether the button is clicked or not
+if (isset($_POST['submit'])) {
+    // Add the Food in Database
+    // Get the data from form
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $price = $_POST['price'];
+    $category = $_POST['category'];
+    
+    // Check whether radio button for featured and active are checked or not
+    if (isset($_POST['featured'])) {
+        $featured = $_POST['featured'];
+    }else {
+        $featured = "No"; //default
+    }
+    if (isset($_POST['active'])) {
+        $active = $_POST['active'];
+    }else{
+        $active = "No"; //default
+    }
+
+    // Upload the image if selected
+    // Check whether the select is clicked or not and upload the image only if the image is selected
+    if (isset($_FILES['image']['name'])) {
+        // Get the details of the selected image
+        $image_name = $_FILES['image']['name'];
+
+        // check whether the image is selected or not and upload image only if selected
+        if ($image_name!="") {
+            # code...
+            // image is selected
+            // Rename the image
+            // Get the extension of selected image jpg.pnh,gif....
+            $ext = end(explode('.',$image_name));
+
+
+            // Upload the image
+        }
+    }else{
+        $image_name = ""; //default value as blank
+    }
+
+
+    // Insert into database
+
+    // Redirect with message to Manage Food page
+}
+?>
