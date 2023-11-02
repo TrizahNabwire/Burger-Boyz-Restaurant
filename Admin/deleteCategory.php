@@ -32,12 +32,12 @@ if (isset($_GET['id']) AND isset($_GET['image_name'])) {
     if ($result==true) {
         # code...
         $_SESSION['delete'] = "<div class='text-success text-center'>Category Deleted Successfully.</div>";
-        header("Location: manageCAtegory.php");
+        header("Location: manageCategory.php");
 
     }else {
         # code...
         $_SESSION['delete'] = "<div class='text-danger text-center'>Failed to Delete Category.</div>";
-        header("Location: manageCAtegory.php");
+        header("Location: manageCategory.php");
     }
 }else{
     // redirect to manage category page
