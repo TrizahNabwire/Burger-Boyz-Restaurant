@@ -51,6 +51,14 @@ session_start();
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="addFood.php" class="btn btn-primary">Add Food</a>
+    <br><br>
+    <?php
+    if (isset($_SESSION['add'])) {
+        # code...
+        echo $_SESSION['add'];
+        unset($_SESSION['add']);
+    }
+    ?>
 
     <!-- Table -->
     <div class="container mt-4">

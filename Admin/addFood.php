@@ -48,10 +48,17 @@ session_start();
     </nav>
 
     <!-- Button to Add Food -->
+    <br>
+    <div class="container mt-4">
+        <h2>Add Food</h2>
     <br><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="addFood.php" class="btn btn-primary">Add Food</a>
-    <br><br>
+    <?php
+        if (isset($_SESSION['uplaod'])) {
+            # code...
+            echo $_SESSION['upload'];
+            unset($_SESSION['upload']);
+        }
+    ?>
     <div class="container">
     <form action="" method="post" enctype="multipart/form-data">
             <table class="table table-bordered">
@@ -74,7 +81,7 @@ session_start();
                     <td>Image</td>
                     <td>
                         <div class="custom-file">
-                        <input type="file" name="image" class="custom-file-input" accept="image/*" required>
+                        <input type="file" name="image" class="custom-file-input" accept="image/*" >
                         <label class="custom-file-label" for="image" name="image">Choose file</label>
                         </div>
                         </td>
@@ -154,7 +161,7 @@ session_start();
                     </td>
                 </tr>
             </table>
-            <input type="submit" value="submit" class="btn btn-primary">
+            <input type="submit" value="Submit" class="btn btn-primary">
         </form>
     </div>
 <?php
@@ -190,11 +197,37 @@ if (isset($_POST['submit'])) {
             # code...
             // image is selected
             // Rename the image
-            // Get the extension of selected image jpg.pnh,gif....
-            $ext = end(explode('.',$image_name));
+            // Get the extension of selected image jpg.pnh,gif.... (pizza.png)
+            $ext = end(explode('.',$image_name)); //png
+
+            // create new name for image
+            $image_name = "Food-".rand(0000,9999).".".$ext; //New image name eg "Food-8765.png"
 
 
             // Upload the image
+            // Get the source path and destination path
+
+            // Source path is the current location of the immage
+            $src = $_FILES['image']['tmp_name'];
+
+            // destination path is where the image will be uploaded
+            $destination = "../images/food/".$image_name;
+
+            // Upload the Food image
+            $upload = move_uploaded_file($src, $destination);
+
+            // check whether image is uploaded or not
+            if ($upload==false) {
+                # code...
+                // failed to upload the image
+                $_SESSION['upload'] = "<div class='text-danger text-center'>Failed to Uplaod Image.</div>";
+
+                // redirect
+                header("Location: addFood.php");
+
+                // stop the process
+                die();
+            }
         }
     }else{
         $image_name = ""; //default value as blank
@@ -202,7 +235,31 @@ if (isset($_POST['submit'])) {
 
 
     // Insert into database
+    // Create SQL Query to save or add food
+    // Price and Category are numerical so no quotes
+    $query1 = "INSERT INTO food SET
+    title = '$title',
+    description = ' $description',
+    price = $price,
+    image_name = '$image_name',
+    category_id = $category,
+    featured = '$featured',
+    active = '$active'
+    ";
+    // execute the query
+    $result1 = mysqli_query($con,$query1);
 
-    // Redirect with message to Manage Food page
+    // check whether data inserted or not
+    if ($result1==true) {
+        # code...
+        // data inserted successfully
+        $_SESSION['add'] = "<div class='text-success text-center'>Food Added Successfully</div>";
+        header("Location: manageFood.php");
+    }else {
+        // failed to insert data
+        $_SESSION['add'] = "<div class='text-danger text-center'>Failed to Add Food.</div>";
+        header("Location: manageFood.php");
+    }
+
 }
 ?>
