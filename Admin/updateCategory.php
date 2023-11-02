@@ -148,8 +148,49 @@ session_start();
                 </td>
             </tr>
         </table>
+        <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
         <button type="submit" class="btn btn-primary" name="submit">Update Category</button>
 </form>
+<?php
+if (isset($_POST['submit'])) {
+    // get all the value from the form
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+    $current_image = $_POST['current_image'];
+    $featured = $_POST['featured'];
+    $active = $_POST['active'];
+
+    // updating new image if selected
+
+
+    // update database
+    $query1 = "UPDATE category SET
+    title = '$title',
+    featured = '$featured',
+    active = '$active'
+    WHERE id = $id
+    ";
+
+    // execute the query
+    $result = mysqli_query($con, $query1);
+
+    // check whether executed or not
+    if ($result==true) {
+        # code...
+        // category updated
+        $_SESSION['update'] = "<div class='text-success text-center'>Category Updated Successfully</div>";
+        header("Location: manageCategory.php");
+    }else {
+        // failed to update category
+        $_SESSION['update'] = "<div class='text-danger text-center'>Failed Update Category</div>";
+        header("Location: manageCategory.php");
+    }
+
+    // redirect
+    
+}
+?>
 
         </div>
     </div>
