@@ -57,19 +57,27 @@ session_start();
             <table class="table table-bordered">
                 <tr>
                     <td>Title</td>
-                    <td><input type="text" name="title" class="form-control" required></td>
+                    <td>
+                        <input type="text" name="title" class="form-control" required></td>
                 </tr>
                 <tr>
                     <td>Description</td>
-                    <td><textarea name="description" class="form-control" rows="4" required></textarea></td>
+                    <td>
+                        <textarea name="description" class="form-control" rows="4" required></textarea></td>
                 </tr>
                 <tr>
                     <td>Price</td>
-                    <td><input type="number" name="price" class="form-control" required></td>
+                    <td>
+                        <input type="number" name="price" class="form-control" required></td>
                 </tr>
                 <tr>
                     <td>Image</td>
-                    <td><input type="file" name="image" class="form-control" accept="image/*" required></td>
+                    <td>
+                        <div class="custom-file">
+                        <input type="file" name="image" class="custom-file-input" accept="image/*" required>
+                        <label class="custom-file-label" for="image" name="image">Choose file</label>
+                        </div>
+                        </td>
                 </tr>
                 <tr>
                     <td>Category</td>
@@ -84,19 +92,35 @@ session_start();
                 <tr>
                     <td>Featured</td>
                     <td>
-                        <label class="checkbox-inline">
-                            <input type="radio" name="featured" value="Yes"> Yes
-                            <input type="radio" name="featured" value="No"> No
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="featured" id="featured" value="Yes">
+                        <label class="form-check-label" for="featuredYes">
+                            Yes
                         </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="featured" id="featured" value="No">
+                        <label class="form-check-label" for="featuredNo">
+                            No
+                        </label>
+                    </div>
                     </td>
                 </tr>
                 <tr>
                     <td>Active</td>
                     <td>
-                        <label class="checkbox-inline">
-                            <input type="radio" name="active" value="Yes"> Yes
-                            <input type="radio" name="active" value="No"> No
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="active" id="active" value="Yes">
+                        <label class="form-check-label" for="activeYes">
+                            Yes
                         </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="active" id="active" value="No">
+                        <label class="form-check-label" for="activeNo">
+                            No
+                        </label>
+                    </div>
                     </td>
                 </tr>
             </table>

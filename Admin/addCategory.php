@@ -66,7 +66,7 @@ session_start();
     <div class="container">
         <!--  enable file uploads within a form and ensure that the form data is properly encoded for file uploads, you should include the enctype="multipart/form-data" -->
     <form method="post" enctype="multipart/form-data" action="">
-        <table class="table">
+        <table class="table table-bordered">
             <tr>
                 <td>Title</td>
                 <td><input type="text" class="form-control" id="titlet" name="title" placeholder="Category Title"></td>
