@@ -9,7 +9,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Homepage</title>
+    <title>Manage Food</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
@@ -24,7 +24,7 @@ session_start();
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="adminHomepage.php">Home</a>
                     </li>
                     <li class="nav-item">
@@ -34,7 +34,7 @@ session_start();
                         <a class="nav-link" href="manageCategory.php">Category</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="manageFood.php">Food</a>
+                        <a class="nav-link active" href="manageFood.php">Food</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="manageOrder.php">Order</a>
@@ -50,7 +50,7 @@ session_start();
     <!-- Button to Add Food -->
     <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="" class="btn btn-primary">Add Food</a>
+    <a href="addFood.php" class="btn btn-primary">Add Food</a>
 
     <!-- Table -->
     <div class="container mt-4">
