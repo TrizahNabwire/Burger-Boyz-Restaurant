@@ -53,11 +53,12 @@ session_start();
         <h2>Add Food</h2>
     <br><br>
     <?php
-        if (isset($_SESSION['uplaod'])) {
+        if (isset($_SESSION['upload'])) {
             # code...
             echo $_SESSION['upload'];
             unset($_SESSION['upload']);
         }
+        
     ?>
     <div class="container">
     <form action="" method="post" enctype="multipart/form-data">
