@@ -1,6 +1,6 @@
 <?php
 include ("../Authentication/connection.php");
-// include("adminLoginCheck.php");  
+include("adminLoginCheck.php");  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +49,7 @@ include ("../Authentication/connection.php");
     if (isset($_SESSION['admin-login'])) {
         # code...
         echo $_SESSION['admin-login'];
-        unset($_POST['admin-login']);
+        unset($_SESSION['admin-login']);
     }
     ?>
 
