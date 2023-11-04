@@ -65,17 +65,17 @@ session_start();
                 <tr>
                     <td>Title</td>
                     <td>
-                        <input type="text" name="title" class="form-control" required></td>
+                        <input type="text" name="title" class="form-control" placeholder="Food Title"></td>
                 </tr>
                 <tr>
                     <td>Description</td>
                     <td>
-                        <textarea name="description" class="form-control" rows="4" required></textarea></td>
+                        <textarea name="description" class="form-control" rows="4" placeholder="Food Description"></textarea></td>
                 </tr>
                 <tr>
                     <td>Price</td>
                     <td>
-                        <input type="number" name="price" class="form-control" required></td>
+                        <input type="number" name="price" class="form-control" placeholder="Food Price"></td>
                 </tr>
                 <tr>
                     <td>Image</td>
@@ -89,7 +89,7 @@ session_start();
                 <tr>
                     <td>Category</td>
                     <td>
-                        <select name="category" class="form-control" required>
+                        <select name="category" class="form-control" >
                             <?php
                             // <!-- display categories from database -->
                             // <!-- create SQL to get all active categories from database -->
@@ -161,7 +161,7 @@ session_start();
                     </td>
                 </tr>
             </table>
-            <input type="submit" value="Submit" class="btn btn-primary">
+            <input type="submit" value="Submit" name="submit" class="btn btn-primary">
         </form>
     </div>
 <?php
@@ -220,7 +220,7 @@ if (isset($_POST['submit'])) {
             if ($upload==false) {
                 # code...
                 // failed to upload the image
-                $_SESSION['upload'] = "<div class='text-danger text-center'>Failed to Uplaod Image.</div>";
+                $_SESSION['upload'] = "<div class='text-danger text-center'>Failed to Upload Image.</div>";
 
                 // redirect
                 header("Location: addFood.php");
@@ -242,7 +242,7 @@ if (isset($_POST['submit'])) {
     description = ' $description',
     price = $price,
     image_name = '$image_name',
-    category_id = $category,
+    category_id = '$category',
     featured = '$featured',
     active = '$active'
     ";
