@@ -124,8 +124,8 @@ session_start();
                     <td><?php echo $featured; ?></td>
                     <td><?php echo $active; ?></td>
                     <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Food</button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Food</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateFood.php"><button class="btn btn-primary">Update Food</button></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteFood.php"><button class="btn btn-danger">Delete Food</button></a>
                 </td>
                 </tr>
             </tbody>
