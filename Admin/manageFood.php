@@ -66,22 +66,78 @@ session_start();
             <thead>
                 <tr>
                     <th>SN</th>
-                    <th>Full Name</th>
-                    <th>Username</th>
-                    <th>Action</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                    <th>Featured</th>
+                    <th>Active</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
+            <?php
+            // create SQL query to get all the food
+            $query = "SELECT * FROM food";
+
+            // execute query
+            $result = mysqli_query($con,$query);
+
+            // count rows to check whether we have food or not
+            $count = mysqli_num_rows($result);
+
+            $sn =1;
+
+            if ($count>0) {
+                // we have food in database
+                // Get the Foods from Database and display
+                while ($row=mysqli_fetch_assoc($result)) {
+                    // get the value from individual columns
+                    $id = $row['id'];
+                    $title = $row['title'];
+                    $price = $row['price'];
+                    $image_name = $row['image_name'];
+                    $featured = $row['featured'];
+                    $active = $row['active'];
+                    ?>
+
+<tbody>
                 <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>johndoe123</td>
+                    <td><?php echo $sn++; ?></td>
+                    <td><?php echo $title; ?></td>
+                    <td><?php echo $price; ?></td>
                     <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Delete</button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
+                        <?php 
+                        // echo $image_name;
+
+                        // check whether we have image or not
+                        if ($image_name=="") {
+                            # code...
+                            // we do not have image 
+                            echo "<div class='text-danger text-center'>Image Not Added.</div>";
+                        }else {
+                            // we have image
+                            ?>
+                            <img src="../images/category/" <?php echo $image_name; ?> width="100px">
+                            <?php
+                        }
+                         ?>
+                    </td>
+                    <td><?php echo $featured; ?></td>
+                    <td><?php echo $active; ?></td>
+                    <td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Food</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Food</button>
                 </td>
                 </tr>
-                <tr>
+            </tbody>
+                    <?php
+                }
+            }else {
+                // Food not added in database
+                echo "<tr> <td colspan='7' class='text-danger'>Food Not Added Yet</td></tr>";
+            }
+            ?>
+            
+                <!-- <tr>
                 <td>2</td>
                     <td>Jane Trizah</td>
                     <td>janetrizah01</td>
@@ -107,7 +163,7 @@ session_start();
                     &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Admin</button>
                     &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
                 </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
