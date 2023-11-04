@@ -12,6 +12,7 @@ if (!isset($_SESSION['user'])) //if a user session is not set
 
 }
 
+
 ?>
 <html>
     

@@ -46,7 +46,7 @@ include("adminLoginCheck.php");
     </nav>
 
     <?php
-    if (isset($_SESSION['admin-login'])) {
+    if(isset($_SESSION['admin-login'])) {
         # code...
         echo $_SESSION['admin-login'];
         unset($_SESSION['admin-login']);
