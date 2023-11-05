@@ -58,6 +58,25 @@ session_start();
         echo $_SESSION['add'];
         unset($_SESSION['add']);
     }
+
+    if (isset($_SESSION['delete'])) {
+        # code...
+        echo $_SESSION['delete'];
+        unset($_SESSION['delete']);
+    }
+
+    
+    if (isset($_SESSION['unauthorized'])) {
+        # code...
+        echo $_SESSION['unauthorized'];
+        unset($_SESSION['unauthorized']);
+    }
+
+    if (isset($_SESSION['upload'])) {
+        # code...
+        echo $_SESSION['upload'];
+        unset($_SESSION['upload']);
+    }
     ?>
 
     <!-- Table -->
@@ -125,7 +144,7 @@ session_start();
                     <td><?php echo $active; ?></td>
                     <td>
                     &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateFood.php"><button class="btn btn-primary">Update Food</button></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteFood.php"><button class="btn btn-danger">Delete Food</button></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteFood.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>"><button class="btn btn-danger">Delete Food</button></a>
                 </td>
                 </tr>
             </tbody>
