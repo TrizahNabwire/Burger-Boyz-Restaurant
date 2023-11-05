@@ -2,7 +2,7 @@
     include("../Authentication/connection.php");
     include("adminLoginCheck.php");
 // change whether the id and image name value is set or not
-if (isset($_GET['id']) AND isset($_GET['image_name'])) {
+if (isset($_GET['id']) && isset($_GET['image_name'])) {
     // get the value and delete
     $id = $_GET['id'];
     $image_name = $_GET['image_name'];

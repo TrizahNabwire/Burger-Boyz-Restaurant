@@ -146,18 +146,18 @@ session_start();
                         if($image_name!=""){
                             // display the image
                             ?>
-                            <img src="images/Category <?php echo $image_name; ?>" alt="" width="100px">
+                            <img src="images/category/ <?php echo $image_name; ?>" alt="" width="100px">
                             <?php
                         }else{
                             // display the message
-                            echo "<div class='text-danger text-center>Image Not Added</div>";
+                            echo "<div class='text-danger text-center'>Image Not Added</div>";
                         }
                         ?>
                     </td>
                     <td><?php echo $featured ?></td>
                     <td><?php echo $active ?></td>
                     <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateCategory.php?id=<?php echo $id ?>"><button class="btn btn-primary">Update Category</button></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateCategory.php?id=<?php echo $id; ?>"><button class="btn btn-primary">Update Category</button></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteCategory.php?id=<?php echo $id; ?>&image_name =<?php echo $image_name; ?>"><button class="btn btn-danger">Delete Category</button></a>
                 </td>
                 </tr>
