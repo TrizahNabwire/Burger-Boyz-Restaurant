@@ -143,7 +143,7 @@ session_start();
                     <td><?php echo $featured; ?></td>
                     <td><?php echo $active; ?></td>
                     <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateFood.php"><button class="btn btn-primary">Update Food</button></a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateFood.php?id=<?php echo $id; ?>"><button class="btn btn-primary">Update Food</button></a>
                     &nbsp;&nbsp;&nbsp;&nbsp;<a href="deleteFood.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>"><button class="btn btn-danger">Delete Food</button></a>
                 </td>
                 </tr>

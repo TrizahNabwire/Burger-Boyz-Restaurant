@@ -78,7 +78,7 @@ session_start();
                     <td>
                         <input type="number" name="price" class="form-control" placeholder="Food Price"></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>Image</td>
                     <td>
                         <div class="custom-file">
@@ -86,6 +86,9 @@ session_start();
                         <label class="custom-file-label" for="image" name="image">Choose file</label>
                         </div>
                         </td>
+                </tr> -->
+                <tr>
+                    <td>Current Image</td>
                 </tr>
                 <tr>
                     <td>Category</td>
