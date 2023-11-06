@@ -70,6 +70,9 @@ session_start();
                         <input type="number" name="price" class="form-control" placeholder="Food Price"></td>
                 </tr>
                 <tr>
+                    <td>Current Image</td>
+                </tr>
+                <tr>
                     <td>Image</td>
                     <td>
                         <div class="custom-file">
@@ -82,6 +85,27 @@ session_start();
                     <td>Category</td>
                     <td>
                     <select name="category" class="form-control" >
+                        <?php 
+                        // query to get active categories
+                        $query = "SELECT * FROM category WHERE active='Yes'";
+
+                        $result = mysqli_query($con, $query);
+
+                        $count = mysqli_num_rows($result);
+
+                        if ($count>0) {
+                            // category available
+                            while ($row=mysqli_fetch_assoc($result)) {
+                                $category_title = $row['title'];
+                                $category_id = $row['id'];
+
+                                echo "<option value='$category_id'>$category_title</option>";
+                            }
+                            
+                        }else {
+                            echo "<option value='0'>Category Not Available</option>";
+                        }
+                        ?>
                     </select>
                     </td>
                 </tr>
@@ -120,6 +144,6 @@ session_start();
                     </td>
                 </tr>
             </table>
-            <input type="submit" value="Submit" name="submit" class="btn btn-primary">
+            <input type="submit" value="Update Food" name="submit" class="btn btn-primary">
         </form>
     </div>
