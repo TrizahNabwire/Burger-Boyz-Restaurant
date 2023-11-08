@@ -58,16 +58,19 @@ session_start();
         $result1 = mysqli_query($con, $query1);
 
         // get the value based on query executed
-        $row1 = mysqli_fetch_assoc($result1);
+        $count = mysqli_num_rows($result1);
 
+        if($count==1){
         // get the individual values of selected food
-        $title = $row1['title'];
-        $description = $row1['description'];
-        $price = $row1['price'];
-        $current_image = $row1['image_name'];
-        $current_category = $row1['category_id'];
-        $featured = $row1['featured'];
-        $active = $row1['active'];
+            $row1 = mysqli_fetch_assoc($result1);
+            $title = $row1['title'];
+            $description = $row1['description'];
+            $price = $row1['price'];
+            $current_image = $row1['image_name'];
+            $current_category = $row1['category_id'];
+            $featured = $row1['featured'];
+            $active = $row1['active'];
+        }
 
 
     }else{
@@ -108,7 +111,7 @@ session_start();
                         }else {
                             // Image Available
                             ?>
-                            <img src="images/food<?php echo $current_image; ?>" alt="<?php echo $title; ?>" width="100px">
+                            <img src="images/food<?php echo $current_image ?>" width="100px">
                             <?php
                         }
                         ?>
@@ -227,7 +230,7 @@ session_start();
                 $image_name = "Food-".rand(0000, 9999).'.'.$ext; //renames the image
 
                 // get the source path and destination path
-                $src_path = $_FILES['image']['name']; //source path
+                $src_path = $_FILES['image']['tmp_name']; //source path
                 $destination = "../images/food".$image_name; //destination path
 
                 // upload the image
