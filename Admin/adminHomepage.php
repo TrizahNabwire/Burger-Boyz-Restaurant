@@ -76,7 +76,7 @@ include ("../Authentication/connection.php");
                     <?php
                         $query2 = "SELECT * FROM food";
                         $result2 = mysqli_query($con,$query2);
-                        $count2 = mysqli_num_rows($result1);
+                        $count2 = mysqli_num_rows($result2);
                         ?>
                         
                     <h5 class="card-title text-center"><?php echo $count2; ?></h5>
