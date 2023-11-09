@@ -147,7 +147,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h1>
-          Foods on "Category"
+          Foods on Your Search "Pizza"
         </h1>
         <br><br>
         <h2>
