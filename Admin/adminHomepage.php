@@ -73,8 +73,13 @@ include ("../Authentication/connection.php");
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
+                    <?php
+                        $query2 = "SELECT * FROM food";
+                        $result2 = mysqli_query($con,$query2);
+                        $count2 = mysqli_num_rows($result1);
+                        ?>
                         
-                    <h5 class="card-title text-center">6</h5>
+                    <h5 class="card-title text-center"><?php echo $count2; ?></h5>
                         <h5 class="card-title text-center">Foods</h5>
                     </div>
                 </div>
