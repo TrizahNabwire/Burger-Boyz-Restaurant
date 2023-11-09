@@ -1130,7 +1130,7 @@ session_start();
               Welcome to Burger Boyz Restaurant, your culinary playground for the perfect blend of flavors and a world of choices! From mouthwatering, wood-fired pizzas and gourmet burgers that redefine satisfaction to delightful pasta dishes and golden, crispy fries, we've crafted a menu that caters to every craving, ensuring an unforgettable dining experience that tantalizes taste buds. 
               Come for the variety, stay for the deliciousness, and savor the essence of great food in one extraordinary destination.
             </p>
-            <a href="about.html">
+            <a href="about.php">
               Read More
             </a>
           </div>
@@ -1223,7 +1223,7 @@ session_start();
                   Monica Robel
                 </h6>
                 <p>
-                  magna aliqua
+                  Student
                 </p>
               </div>
               <div class="img-box">
@@ -1241,7 +1241,7 @@ session_start();
                   Mike Mendosa
                 </h6>
                 <p>
-                  magna aliqua
+                  Engineer
                 </p>
               </div>
               <div class="img-box">

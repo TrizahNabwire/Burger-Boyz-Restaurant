@@ -60,8 +60,31 @@ include ("../Authentication/connection.php");
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
-                    <h5 class="card-title text-center">5</h5>
-                        <h5 class="card-title text-center">Admin</h5>
+                    <?php
+                        $query1 = "SELECT * FROM category";
+                        $result1 = mysqli_query($con,$query1);
+                        $count1 = mysqli_num_rows($result1);
+                        ?>
+                    <h5 class="card-title text-center"><?php echo $count1; ?></h5>
+                        <h5 class="card-title text-center">Categories</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        
+                    <h5 class="card-title text-center">6</h5>
+                        <h5 class="card-title text-center">Foods</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        
+                    <h5 class="card-title text-center">8</h5>
+                        <h5 class="card-title text-center">Total Orders</h5>
                     </div>
                 </div>
             </div>
@@ -69,23 +92,7 @@ include ("../Authentication/connection.php");
                 <div class="card">
                     <div class="card-body">
                     <h5 class="card-title text-center">5</h5>
-                        <h5 class="card-title text-center">Category</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title text-center">5</h5>
-                        <h5 class="card-title text-center">Food</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body">
-                    <h5 class="card-title text-center">5</h5>
-                        <h5 class="card-title text-center">Order</h5>
+                        <h5 class="card-title text-center">Revenue Generated</h5>
                     </div>
                 </div>
             </div>
