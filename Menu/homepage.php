@@ -404,24 +404,55 @@ session_start();
         <li data-filter=".fries">Fries</li>
       </ul>
 
-      <div class="filters-content">
+      <?php 
+      // get food from db that are active and featured
+      $query1 = "SELECT * FROM food WHERE active='Yes' AND featured='Yes' LIMIT 6";
+
+      $result1 = mysqli_query($con, $query1);
+      $count1 = mysqli_num_rows($result1);
+      if($count1>0)
+      {
+        // Food Available
+        while ($row=mysqli_fetch_assoc($result1)) {
+          # code...
+          $id = $row['id'];
+          $title = $row['title'];
+          $description = $row['description'];
+          $price = $row['price'];
+          $image_name = $row['image_name'];
+          ?>
+
+<div class="filters-content">
         <div class="row grid">
           <div class="col-sm-6 col-lg-4 all pizza">
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="../images/f1.png" alt="">
+                  <?php 
+                  if($image_name== " "){
+                    echo "<div class='text-danger'>Image Not Available</div>";
+                  }else{
+                    ?>
+                    <img src="../images/food/<?php echo $image_name; ?>" alt="">
+                    <?php
+                  }
+                  ?>
+                  <!-- <img src="../images/f1.png" alt=""> -->
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pizza
+                    <!-- Delicious Pizza -->
+                    <?php echo $title; ?>
                   </h5>
                   <p>
-                  Oven-fresh pizzas—crafted to perfection and designed to satisfy every craving. Taste the essence of deliciousness with every delectable slice.
+                  <!-- Oven-fresh pizzas—crafted to perfection and designed to
+                   satisfy every craving. Taste the essence of deliciousness with every delectable slice. -->
+                   <?php echo $description; ?>
                   </p>
                   <div class="options">
                     <h6>
-                      $10
+                      <!-- $10 -->
+                      <?php echo $price; ?>
                     </h6>
                     <a href="">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -482,6 +513,20 @@ session_start();
               </div>
             </div>
           </div>
+        </div>
+</div>
+    </div>
+  </section>
+          
+          <?php
+        }
+
+      }else{
+        echo "<div class='text-danger text-center'>Food Not Available</div>";
+      }
+      ?>
+
+<!--       
           <div class="col-sm-6 col-lg-4 all burger">
             <div class="box">
               <div>
@@ -550,8 +595,8 @@ session_start();
                         <g>
                         </g>
                         <g>
-                        </g>
-                      </svg>
+                        </g> -->
+                      <!-- </svg>
                     </a>
                   </div>
                 </div>
@@ -649,8 +694,8 @@ session_start();
                   </p>
                   <div class="options">
                     <h6>
-                      $18
-                    </h6>
+                      $18 -->
+                    <!-- </h6>
                     <a href="">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
@@ -710,8 +755,8 @@ session_start();
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4 all fries">
-            <div class="box">
+          <div class="col-sm-6 col-lg-4 all fries"> -->
+            <!-- <div class="box">
               <div>
                 <div class="img-box">
                   <img src="../images/f5.png" alt="">
@@ -791,8 +836,8 @@ session_start();
               <div>
                 <div class="img-box">
                   <img src="../images/f6.png" alt="">
-                </div>
-                <div class="detail-box">
+                </div> -->
+                <!-- <div class="detail-box">
                   <h5>
                     Delicious Pizza
                   </h5>
@@ -879,8 +924,8 @@ session_start();
                     <h6>
                       $12
                     </h6>
-                    <a href="">
-                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
+                    <a href=""> -->
+                      <!-- <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
                             <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
@@ -1024,13 +1069,9 @@ session_start();
                   <h5>
                     Delicious Pasta
                   </h5>
-                  <p>
+                  <p> -->
                     <!-- Elevate your dining pleasure with our sumptuous pasta dishes, a delightful journey through layers of taste and texture. -->
-                    Elevate your senses with our pasta dishes, where every forkful is a journey of taste and texture, lovingly crafted to perfection
-
-
-
-
+                    <!-- Elevate your senses with our pasta dishes, where every forkful is a journey of taste and texture, lovingly crafted to perfection
 
                   </p>
                   <div class="options">
@@ -1104,7 +1145,7 @@ session_start();
         </a>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- end food section -->
 

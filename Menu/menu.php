@@ -1,3 +1,7 @@
+<?php
+ include("../Authentication/connection.php");
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -158,25 +162,49 @@
         <li data-filter=".pasta">Pasta</li>
         <li data-filter=".fries">Fries</li>
       </ul>
-
-      <div class="filters-content">
+      <?php 
+       $query = "SELECT * FROM food WHERE active='Yes'";
+       $result = mysqli_query($con, $query);
+       $count = mysqli_num_rows($result);
+       if($count>0){
+        while($row=mysqli_fetch_assoc($result)){
+          $id = $row['id'];
+          $title = $row['title'];
+          $description = $row['description'];
+          $price = $row['price'];
+          $image_name = $row['image_name'];
+          ?>
+          <div class="filters-content">
         <div class="row grid">
           <div class="col-sm-6 col-lg-4 all pizza">
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="../images/f1.png" alt="">
+                  <?php
+                  // <!-- <img src="../images/f1.png" alt=""> -->
+                  if($image_name==" "){
+                    echo "<div class='text-danger'>Image Not Available</div>";
+                  }else{
+                    ?>
+
+                    <img src="..images/food/ <?php echo $image_name; ?>" alt="">
+                    <?php
+                  }
+                  ?>
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pizza
+                    <!-- Delicious Pizza -->
+                    <?php echo $title; ?>
                   </h5>
                   <p>
-                    Oven-fresh pizzas—crafted to perfection and designed to satisfy every craving. Taste the essence of deliciousness
+                    <!-- Oven-fresh pizzas—crafted to perfection and designed to satisfy every craving. Taste the essence of deliciousness -->
+                    <?php echo $description; ?>
                   </p>
                   <div class="options">
                     <h6>
-                      $20
+                      <!-- $20 -->
+                      <?php echo $price; ?>
                     </h6>
                     <a href="">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -237,7 +265,19 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4 all burger">
+        </div>
+</section>
+          <?php
+        }
+
+       }else{
+        echo "<div class='text-danger text-center'>Food Not Found</div>";
+
+       }
+      ?>
+
+      
+          <!-- <div class="col-sm-6 col-lg-4 all burger">
             <div class="box">
               <div>
                 <div class="img-box">
@@ -345,8 +385,8 @@
                          C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
                          c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
                          C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                          </g>
-                        </g>
+                          </g> -->
+                        <!-- </g>
                         <g>
                           <g>
                             <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
@@ -452,9 +492,9 @@
                         <g>
                         </g>
                         <g>
-                        </g>
-                        <g>
-                        </g>
+                        </g> -->
+                        <!-- <g> -->
+                        <!-- </g>
                         <g>
                         </g>
                         <g>
@@ -626,8 +666,8 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Tasty Burger
-                  </h5>
+                    Tasty Burger -->
+                  <!-- </h5>
                   <p>
                     Savor the juiciest, handcrafted burgers that redefine comfort food. 
                     Bite into bliss with every mouthwatering creation, from classic to gourmet, all in one sensational bite.
@@ -849,14 +889,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- <div class="btn-box">
         <a href="">
           View More
         </a>
       </div> -->
-    </div>
-  </section>
+    <!-- </div> -->
+  <!-- </section> -->
 
   <!-- end food section -->
 
