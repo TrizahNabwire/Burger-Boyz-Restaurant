@@ -141,7 +141,7 @@ session_start();
                 </svg>
               </a>
               <form class="form-inline" action="foodSearch.php" method="post">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" name="search" type="submit">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
