@@ -140,11 +140,53 @@ session_start();
                   </g>
                 </svg>
               </a>
-              <form class="form-inline" action="foodSearch.php" method="post">
+              <!-- <form class="form-inline" action="foodSearch.php" method="post">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" name="search" type="submit">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
-              </form>
+              </form> -->
+
+              <style>
+        /* Custom CSS for the search icon and button */
+        .search-container {
+            display: inline-block;
+            position: relative;
+        }
+
+        .search-icon, .search-button {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .search-button {
+            display: none;
+        }
+
+        /* CSS for the search input, adjust as needed */
+        .search-input {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <div class="search-icon" onclick="showSearchButton()">
+        <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+            <i class="fa fa-search"></i>
+        </div>
+        <form method="POST" action="foodSearch.php" class="search-button" style="display: none;">
+            <input type="text" name="search_query" class="form-control search-input" placeholder="Search...">
+            <!-- <button type="submit" class="btn btn-secondary">Search</button> -->
+        </form>
+    </div>
+
+    <script>
+        function showSearchButton() {
+            document.querySelector('.search-icon').style.display = 'none';
+            document.querySelector('.search-button').style.display = 'inline-block';
+        }
+    </script>
+
               <a href="" class="order_online">
                 Order Online
               </a>
@@ -163,6 +205,7 @@ session_start();
               <div class="row">
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
+                    
                     <h1>
                       Fast Food Restaurant
                     </h1>
