@@ -183,6 +183,21 @@ a:focus {
   color: #ffbe33;
 }
 
+#search-container{
+  display: inline-block;
+  position: relative;
+}
+#search-icon, .search-button {
+  display: inline-block;
+  cursor: pointer;
+}
+#search-button {
+  display: none;
+}
+#search-input {
+  width: 100px;
+}
+
 .custom_nav-container .nav_search-btn {
   width: auto;
   height: auto;

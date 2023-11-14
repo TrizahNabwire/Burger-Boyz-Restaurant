@@ -138,33 +138,6 @@ session_start();
                   </g>
                 </svg>
               </a>
-              <!-- <form class="form-inline" action="foodSearch.php" method="post">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" name="search" type="submit">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form> -->
-
-              <style>
-        /* Custom CSS for the search icon and button */
-        .search-container {
-            display: inline-block;
-            position: relative;
-        }
-
-        .search-icon, .search-button {
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .search-button {
-            display: none;
-        }
-
-        /* CSS for the search input, adjust as needed */
-        .search-input {
-            width: 200px;
-        }
-    </style>
 </head>
 <body>
     <div class="search-container">
