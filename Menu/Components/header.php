@@ -142,12 +142,12 @@ session_start();
 <body>
     <div class="search-container">
         <div class="search-icon" onclick="showSearchButton()">
-        <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+        <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit" >
             <i class="fa fa-search"></i>
         </div>
         <form method="POST" action="foodSearch.php" class="search-button" style="display: none;">
-            <input type="text" name="search_query" class="form-control search-input" placeholder="Search...">
-            <!-- <button type="submit" class="btn btn-secondary">Search</button> -->
+            <input type="text" name="search" class="form-control search-input" placeholder="Search...">
+            <button type="submit" name="submit" class="btn btn-secondary" hidden>Search</button>
         </form>
     </div>
 

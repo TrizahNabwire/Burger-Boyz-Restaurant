@@ -6,9 +6,12 @@
 
   <section class="food_section layout_padding">
     <div class="container">
+      <?php
+       $search = $_POST['search'];
+      ?>
       <div class="heading_container heading_center">
         <h1>
-          Foods on Your Search "Pizza"
+          Foods on Your Search <?php echo $search; ?>
         </h1>
         <br><br>
         <h2>
@@ -26,7 +29,6 @@
 
   <!-- get search keyword -->
   <?php
-  $search = $_POST['search'];
  
   // SQL Query to get food based on search keyword
   $query = "SELECT * FROM food WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
