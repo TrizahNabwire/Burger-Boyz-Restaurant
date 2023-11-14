@@ -33,6 +33,7 @@
 </head>
 
 <!-- footer section -->
+<div id="footer">
 <footer class="footer_section">
     <div class="container">
       <div class="row">
@@ -111,6 +112,7 @@
       </div>
     </div>
   </footer>
+  </div>
   <!-- footer section -->
 
   <!-- jQery -->

@@ -35,6 +35,10 @@ h2 {
   font-family: 'Dancing Script', cursive;
 }
 
+#header{
+  background-color: #222831;
+}
+
 .heading_container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -900,6 +904,10 @@ a:focus {
 }
 
 /* footer section*/
+#footer{
+  background-color: #222831;
+  padding-top: 60px;
+}
 .footer_section {
   background-color: #222831;
   color: #ffffff;

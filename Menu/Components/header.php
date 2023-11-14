@@ -49,11 +49,8 @@ session_start();
 
 <body>
 
-  <div class="hero_area">
-    <div class="bg-box">
-      <img src="../images/hero-bg.jpg" alt="">
-    </div>
     <!-- header section strats -->
+    <div id="header">
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
@@ -69,8 +66,9 @@ session_start();
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item active">
-                <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <!-- <a class="nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a> -->
+                <a class="nav-link" href="homepage.php">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="menu.php">Menu</a>
@@ -195,4 +193,5 @@ session_start();
         </nav>
       </div>
     </header>
+    </div>
     <!-- end header section -->
