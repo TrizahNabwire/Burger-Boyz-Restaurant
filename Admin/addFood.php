@@ -163,7 +163,7 @@ session_start();
                     </td>
                 </tr>
             </table>
-            <input type="submit" value="Submit" name="submit" class="btn btn-primary">
+            <input type="submit" value="Add Food" name="submit" class="btn btn-primary">
         </form>
     </div>
 <?php
