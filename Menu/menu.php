@@ -52,7 +52,7 @@
           $image_name = $row2['image_name'];
           ?>
 
-<div class="filters-content">
+           <div class="filters-content">
         <div class="row grid">
           <div class="col-sm-6 col-lg-4 all pizza">
             <div class="box">

@@ -250,7 +250,7 @@
 
       <!-- Categories -->
       <?php
-      $query = "SELECT title , id FROM category WHERE active='Yes' AND featured='Yes' ";
+      $query = "SELECT title , id FROM category ";
       $result = mysqli_query($con, $query);
       $count = mysqli_num_rows($result);
       if($count>0){
@@ -308,7 +308,7 @@
                     echo "<div class='text-danger'>Image Not Available</div>";
                   }else{
                     ?>
-                    <img src="../images/food/<?php echo $image_name; ?>" alt="">
+                    <img src="../images/food/<?php echo $image_name; ?>" alt="" >
                     <?php
                   }
                   ?>
@@ -403,7 +403,7 @@
 
 
       <div class="btn-box">
-        <a href="">
+        <a href="menu.php">
           View More
         </a>
       </div>
