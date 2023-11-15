@@ -248,13 +248,35 @@
         </h2>
       </div>
 
-      <ul class="filters_menu">
+      <!-- Categories -->
+      <?php
+      $query = "SELECT title , id FROM category WHERE active='Yes' AND featured='Yes' ";
+      $result = mysqli_query($con, $query);
+      $count = mysqli_num_rows($result);
+      if($count>0){
+        while($row=mysqli_fetch_assoc($result)){
+          $id = $row['id'];
+          $title = $row['title'];
+          ?>
+          
+          <ul class="filters_menu">
+        <!-- <li class="active" data-filter="*">All</li> -->
+        <li ><?php echo $title; ?></li></ul>
+          <?php
+        }
+      }else{
+        echo "<div class='text-danger text-center'>Category Not Found</div>";
+      }
+      ?>
+
+
+      <!-- <ul class="filters_menu">
         <li class="active" data-filter="*">All</li>
         <li data-filter=".burger">Burger</li>
         <li data-filter=".pizza">Pizza</li>
         <li data-filter=".pasta">Pasta</li>
         <li data-filter=".fries">Fries</li>
-      </ul>
+      </ul> -->
 
       <?php 
       // get food from db that are active and featured
