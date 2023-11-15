@@ -258,10 +258,11 @@
           $id = $row['id'];
           $title = $row['title'];
           ?>
-          
+          <a href="menu.php?category_id=<?php echo $id; ?>">
           <ul class="filters_menu">
         <!-- <li class="active" data-filter="*">All</li> -->
         <li ><?php echo $title; ?></li></ul>
+        </a>
           <?php
         }
       }else{
