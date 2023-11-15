@@ -1,6 +1,12 @@
 <?php
  include("Components/header.php");
 ?>
+<?php
+if(isset($_SESSION['order'])){
+  echo $_SESSION['order'];
+  unset($_SESSION['order']);
+}
+?>
 <div class="hero_area">
     <div class="bg-box">
       <img src="../images/hero-bg.jpg" alt="">
@@ -329,7 +335,7 @@
                       <!-- $10 -->
                       <?php echo $price; ?>
                     </h6>
-                    <a href="">
+                    <a href="order.php?food_id=<?php echo $id; ?>">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>

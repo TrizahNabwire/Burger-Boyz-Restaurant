@@ -46,6 +46,7 @@
       if($count2>0){
         // food is available
         while($row2=mysqli_fetch_assoc($result2)){
+          $id = $row2['id'];
           $title = $row2['title'];
           $description = $row2['description'];
           $price = $row2['price'];
@@ -84,7 +85,7 @@
                       <!-- $20 -->
                       <?php echo $price; ?>
                     </h6>
-                    <a href="">
+                    <a href="order.php?food_id=<?php echo $id; ?>">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -156,17 +157,17 @@
 
       ?>
       <?php 
-       $query = "SELECT * FROM food WHERE active='Yes'";
-       $result = mysqli_query($con, $query);
-       $count = mysqli_num_rows($result);
-       if($count>0){
-        while($row=mysqli_fetch_assoc($result)){
-          $id = $row['id'];
-          $title = $row['title'];
-          $description = $row['description'];
-          $price = $row['price'];
-          $image_name = $row['image_name'];
-          ?>
+      //  $query = "SELECT * FROM food WHERE active='Yes'";
+      //  $result = mysqli_query($con, $query);
+      //  $count = mysqli_num_rows($result);
+      //  if($count>0){
+        // while($row=mysqli_fetch_assoc($result)){
+          // $id = $row['id'];
+          // $title = $row['title'];
+          // $description = $row['description'];
+          // $price = $row['price'];
+          // $image_name = $row['image_name'];
+          // ?>
           <div class="filters-content">
         <div class="row grid">
           <div class="col-sm-6 col-lg-4 all pizza">
@@ -199,7 +200,7 @@
                       <!-- $20 -->
                       <?php echo $price; ?>
                     </h6>
-                    <a href="">
+                    <a href="order.php?food_id=<?php echo $id; ?>">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -261,21 +262,15 @@
         </div>
 </section>
           <?php
-        }
+      //   }
 
-       }else{
-        echo "<div class='text-danger text-center'>Food Not Found</div>";
+      //  }else{
+      //   echo "<div class='text-danger text-center'>Food Not Found</div>";
 
-       }
+      //  }
       ?>
 
       
-         
-      <div class="btn-box">
-        <a href="">
-          View More
-        </a>
-      </div>
     
 
   <!-- end food section -->
