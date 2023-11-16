@@ -87,8 +87,13 @@ include ("../Authentication/connection.php");
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
+                    <?php
+                        $query3 = "SELECT * FROM tbl_order";
+                        $result3 = mysqli_query($con,$query3);
+                        $count3 = mysqli_num_rows($result3);
+                        ?>
                         
-                    <h5 class="card-title text-center">8</h5>
+                    <h5 class="card-title text-center"><?php echo $count3; ?></h5>
                         <h5 class="card-title text-center">Total Orders</h5>
                     </div>
                 </div>
