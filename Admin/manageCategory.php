@@ -146,7 +146,7 @@ session_start();
                         if($image_name!=""){
                             // display the image
                             ?>
-                            <img src="images/category/ <?php echo $image_name; ?>" alt="" width="100px">
+                            <img src="images/category/<?php echo $image_name; ?>" alt="" width="100px">
                             <?php
                         }else{
                             // display the message

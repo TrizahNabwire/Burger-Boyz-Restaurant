@@ -179,7 +179,7 @@ if (isset($_POST['submit'])) {
             $image_name = "Food_Category_".rand(000, 999).'.'.$ext; //Food_category_748.jpg
 
             $source_path = $_FILES['image']['tmp_name'];
-            $destination_path = "../images/category".$image_name;
+            $destination_path = "../images/category/".$image_name;
 
             // upload the image
             $upload = move_uploaded_file($source_path, $destination_path);
@@ -228,10 +228,10 @@ if (isset($_POST['submit'])) {
     ";
 
     // execute the query
-    $result = mysqli_query($con, $query1);
+    $result1 = mysqli_query($con, $query1);
 
     // check whether executed or not
-    if ($result==true) {
+    if ($result1==true) {
         # code...
         // category updated
         $_SESSION['update'] = "<div class='text-success text-center'>Category Updated Successfully</div>";
