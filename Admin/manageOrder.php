@@ -9,7 +9,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Homepage</title>
+    <title>Manage Order</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
@@ -24,7 +24,7 @@ session_start();
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="adminHomepage.php">Home</a>
                     </li>
                     <li class="nav-item">
@@ -36,7 +36,7 @@ session_start();
                     <li class="nav-item">
                         <a class="nav-link" href="manageFood.php">Food</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="manageOrder.php">Order</a>
                     </li>
                     <li class="nav-item">
@@ -54,51 +54,63 @@ session_start();
             <thead>
                 <tr>
                     <th>SN</th>
-                    <th>Full Name</th>
-                    <th>Username</th>
+                    <th>Food Name</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                    <th>Customer Name</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Address</th>
                     <th>Action</th>
                 </tr>
             </thead>
+            <?php
+                $query = "SELECT * FROM tbl_food";
+                $result = mysqli_query($con, $query);
+                $count = mysqli_num_rows($result);
+                $sn = 1;
+                if($count>0){
+                    while($row = mysqli_fetch_assoc($result)){
+                        $id = $row['id'];
+                        $food = $row['food'];
+                        $quantity = $row['quantity'];
+                        $total = $row['total'];
+                        $order_date = $row['order_date'];
+                        $status = $row['status'];
+                        $customer_name = $row['customer_name'];
+                        $customer_contact = $row['customer_contact'];
+                        $customer_email = $row['customer_email'];
+                        $customer_address = $row['customer_address'];
+                    }
+                    
+                }
+                ?>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>johndoe123</td>
+                    <td><?php echo $sn++; ?></td>
+                    <td><?php echo $food; ?></td>
+                    <td><?php echo $price; ?></td>
+                    <td><?php echo $quantity; ?></td>
+                    <td><?php echo $total; ?></td>
+                    <td><?php echo $order_date; ?></td>
+                    <td><?php echo $status; ?></td>
+                    <td><?php echo $customer_name; ?></td>
+                    <td><?php echo $customer_contact; ?></td>
+                    <td><?php echo $customer_email; ?></td>
+                    <td><?php echo $customer_address; ?></td>
                     <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Delete</button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Order</button>
+                    
                 </td>
                 </tr>
-                <tr>
-                <td>2</td>
-                    <td>Jane Trizah</td>
-                    <td>janetrizah01</td>
-                    <td>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Admin</button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
-                </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Mary Johnson</td>
-                    <td>maryj123</td>
-                    <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Admin</button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
-                </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>John Williams</td>
-                    <td>johnwill</td>
-                    <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Admin</button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger">Delete Admin</button>
-                </td>
-                </tr>
+               
             </tbody>
         </table>
     </div>
+
+    
 
     
 
