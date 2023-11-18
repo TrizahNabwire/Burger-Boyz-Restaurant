@@ -68,7 +68,7 @@ session_start();
                 </tr>
             </thead>
             <?php
-                $query = "SELECT * FROM tbl_order";
+                $query = "SELECT * FROM tbl_order ORDER BY id DESC";
                 $result = mysqli_query($con, $query);
                 $count = mysqli_num_rows($result);
                 $sn = 1;
