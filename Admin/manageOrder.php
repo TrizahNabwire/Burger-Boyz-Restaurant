@@ -54,7 +54,8 @@ session_start();
             <thead>
                 <tr>
                     <th>SN</th>
-                    <th>Food Name</th>
+                    <th>Food</th>
+                    <th>Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
                     <th>Order Date</th>
@@ -67,7 +68,7 @@ session_start();
                 </tr>
             </thead>
             <?php
-                $query = "SELECT * FROM tbl_food";
+                $query = "SELECT * FROM tbl_order";
                 $result = mysqli_query($con, $query);
                 $count = mysqli_num_rows($result);
                 $sn = 1;
@@ -75,6 +76,7 @@ session_start();
                     while($row = mysqli_fetch_assoc($result)){
                         $id = $row['id'];
                         $food = $row['food'];
+                        $price = $row['price'];
                         $quantity = $row['quantity'];
                         $total = $row['total'];
                         $order_date = $row['order_date'];
@@ -83,10 +85,8 @@ session_start();
                         $customer_contact = $row['customer_contact'];
                         $customer_email = $row['customer_email'];
                         $customer_address = $row['customer_address'];
-                    }
-                    
-                }
-                ?>
+                   ?>
+                
             <tbody>
                 <tr>
                     <td><?php echo $sn++; ?></td>
@@ -105,8 +105,16 @@ session_start();
                     
                 </td>
                 </tr>
-               
-            </tbody>
+                </tbody>
+                <?php
+            }
+                    
+                }
+                else{
+                    echo "<tr><td class='text-danger'>Orders Not Available</td></tr>";
+                }
+                ?>
+            
         </table>
     </div>
 
