@@ -46,6 +46,15 @@ session_start();
             </div>
         </div>
     </nav>
+    <br><br>
+
+    <?php
+    if(isset($_SESSION['update'])){
+        echo $_SESSION['update'];
+        unset($_SESSION['update']);
+    }
+    ?>
+    <br><br>
 
     
     <!-- Table -->
@@ -95,13 +104,30 @@ session_start();
                     <td><?php echo $quantity; ?></td>
                     <td><?php echo $total; ?></td>
                     <td><?php echo $order_date; ?></td>
-                    <td><?php echo $status; ?></td>
+                    <td>
+                        <?php
+                        //  echo $status; 
+                        // Ordered, On Delivery, Delivered, Cancelled
+                        if($status=="Ordered"){
+                            echo "<label>$status</label>";
+                        }
+                        elseif($status=="On Delivery"){
+                            echo "<label style='color: orange;'>$status</label>";
+                        }
+                        elseif($status=="Delivered"){
+                            echo "<label style='color: green;'>$status</label>";
+                        }
+                        elseif($status=="Cancelled"){
+                            echo "<label style='color: red;'>$status</label>";
+                        }
+                         ?>
+                    </td>
                     <td><?php echo $customer_name; ?></td>
                     <td><?php echo $customer_contact; ?></td>
                     <td><?php echo $customer_email; ?></td>
                     <td><?php echo $customer_address; ?></td>
                     <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary">Update Order</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<a href="updateOrder.php?id=<?php echo $id; ?>"><button class="btn btn-primary">Update Order</button></a>
                     
                 </td>
                 </tr>
