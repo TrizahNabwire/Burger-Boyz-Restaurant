@@ -101,7 +101,16 @@ include ("../Authentication/connection.php");
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
-                    <h5 class="card-title text-center">5</h5>
+                        <?php
+                        $query4 = "SELECT SUM(total) AS total FROM tbl_order WHERE status='Delivered'";
+                        $result4 = mysqli_query($con, $query4);
+                        $row4 = mysqli_fetch_assoc($result4);
+
+                        // total revenue
+                        $total_revenue = $row4['total'];
+
+                        ?>
+                    <h5 class="card-title text-center">Ksh. <?php echo $total_revenue; ?></h5>
                         <h5 class="card-title text-center">Revenue Generated</h5>
                     </div>
                 </div>
