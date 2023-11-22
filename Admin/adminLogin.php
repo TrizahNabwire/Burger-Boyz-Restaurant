@@ -77,8 +77,13 @@ session_start();
 if (isset($_POST['submit'])) {
     # code...
     // get the data from login form
-    $username = $_POST['username'];
-    $password = md5($_POST['password']);
+    // $username = $_POST['username'];
+    // $password = md5($_POST['password']);
+
+    // Prevent SQL Injection using mysqli_real_escape_string()
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, md5($_POST['password']));
+   
 
     // SQL to check whether the user with username and password exists or not
     $query = "SELECT * FROM admin WHERE username = '$username' AND password = '$password' ";

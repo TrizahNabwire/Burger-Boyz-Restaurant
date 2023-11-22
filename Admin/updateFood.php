@@ -206,11 +206,11 @@ session_start();
     if (isset($_POST['submit'])) {
         // get all details from the form
         $id = $_POST['id'];
-        $title = $_POST['title'];
-        $description = $_POST['description'];
+        $title = mysqli_real_escape_string($con, $_POST['title']);
+        $description = mysqli_real_escape_string($con, $_POST['description']);
         $price = $_POST['price'];
         $current_image = $_POST['current_image'];
-        $category = $_POST['category'];
+        $category = mysqli_real_escape_string($con, $_POST['category']);
         $featured = $_POST['featured'];
         $active = $_POST['active'];
 

@@ -156,7 +156,7 @@ session_start();
 if (isset($_POST['submit'])) {
     // get all the value from the form
     $id = $_POST['id'];
-    $title = $_POST['title'];
+    $title = mysqli_real_escape_string($con, $_POST['title']);
     $current_image = $_POST['current_image'];
     $featured = $_POST['featured'];
     $active = $_POST['active'];

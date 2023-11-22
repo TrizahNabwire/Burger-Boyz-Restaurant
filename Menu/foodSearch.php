@@ -7,7 +7,11 @@
   <section class="food_section layout_padding">
     <div class="container">
       <?php
-       $search = $_POST['search'];
+      // get the search keyword
+      //  $search = $_POST['search'];
+
+      // Prevent SQL Injection using mysqli_real_escape_string()
+       $search = mysqli_real_escape_string($con, $_POST['search']);
       ?>
       <div class="heading_container heading_center">
         <h1>

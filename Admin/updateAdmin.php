@@ -110,9 +110,9 @@ session_start();
     if (isset($_POST['submit'])) {
         # code...
         // get all the values from form to update
-        $id = $_POST['id'];
-        $full_name = $_POST['full_name'];
-        $username = $_POST['username'];
+        $id = mysqli_real_escape_string($con, $_POST['id']);
+        $full_name = mysqli_real_escape_string($con, $_POST['full_name']);
+        $username = mysqli_real_escape_string($con, $_POST['username']);
 
         // create SQL Query to update Admin
         $query = "UPDATE admin SET

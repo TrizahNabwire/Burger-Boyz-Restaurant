@@ -90,9 +90,14 @@ session_start();
     if (isset($_POST['submit'])) {
         # code...
         // Get Data From Form
-        $full_name = $_POST['full_name'];
-        $username = $_POST['username'];
-        $password = md5($_POST['password']);  //Password Encryption with MD5
+        // $full_name = $_POST['full_name'];
+        // $username = $_POST['username'];
+        // $password = md5($_POST['password']);  //Password Encryption with MD5
+
+        // Prevent SQL Injection
+        $full_name = mysqli_real_escape_string($con, $_POST['full_name']);
+        $username = mysqli_real_escape_string($con, $_POST['username']);
+        $password = mysqli_real_escape_string($con, md5($_POST['password']));
 
         // SQL Query to save data into Database - admin table
 

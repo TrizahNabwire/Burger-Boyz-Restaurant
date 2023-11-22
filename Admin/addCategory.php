@@ -122,7 +122,10 @@ session_start();
 if (isset($_POST['submit'])) 
 {
     # get the value form category form
-    $title = $_POST['title'];
+    // $title = $_POST['title'];
+
+    // Prevent SQL Injection
+    $title = mysqli_real_escape_string($con, $_POST['title']);
 
     // for radio input, we need to check whether the button is selected or not
     if (isset($_POST['featured'])) 
