@@ -86,7 +86,7 @@ session_start();
     </div> -->
 
     <!-- Button to Add Admin -->
-    <br>
+    <!-- <br> -->
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     <?php
@@ -135,8 +135,10 @@ session_start();
     ?>
     <br><br>
 
+
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="addAdmin.php" class="btn btn-primary">Add Admin</a>
+    <br><br>
 
     <!-- Table -->
     <div class="container mt-4">

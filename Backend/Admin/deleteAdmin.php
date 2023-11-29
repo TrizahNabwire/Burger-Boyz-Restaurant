@@ -22,7 +22,7 @@ if ($result==TRUE)
     
 
     // session variable delete
-    $_SESSION['delete'] = "<div class='text-success'>Admin Deleted Successfully</div>";
+    $_SESSION['delete'] = "<div class='text-success text-center'>Admin Deleted Successfully</div>";
 
     header("Location: manageAdmin.php");
 }else
@@ -30,7 +30,7 @@ if ($result==TRUE)
     # code...
     // echo "Failed to Delete Admin";
 
-    $_SESSION['delete'] = "<div class='text-danger'>Failed to Delete Admin. Try Again Later</div>";
+    $_SESSION['delete'] = "<div class='text-danger text-center'>Failed to Delete Admin. Try Again Later</div>";
 
     header('Location: manageAdmin.php');
 

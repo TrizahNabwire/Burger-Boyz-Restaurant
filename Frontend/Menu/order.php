@@ -31,7 +31,7 @@ include("Components/header.php");
   ?>
 
 <div class="container mt-5">
-  <h2 class="text-center mb-4">Food Order</h2>
+  <h2 class="text-left mb-4">Food Order</h2>
 
 
   <!-- Food Details Section -->

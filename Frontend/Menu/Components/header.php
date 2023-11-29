@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-    include("../Authentication/connection.php");
-    include("../Authentication/functions.php");
+    include("../../Backend/Authentication/connection.php");
+    // include("../Authentication/functions.php");
 
 
     // Forces a user to login on homepage
