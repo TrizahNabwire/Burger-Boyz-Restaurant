@@ -12,6 +12,7 @@ session_start();
     <title>Add Admin</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -102,15 +103,15 @@ session_start();
         // SQL Query to save data into Database - admin table
 
         $query = "INSERT INTO admin SET
-        full_name = '$full_name,
-        username = '$username,
+        full_name = '$full_name',
+        username = '$username',
         password = $password
         ";
         
         // Execute Query and Save Data in Database
         // $result = mysqli_query($con, $query) or die(mysqli_error());
 
-        $query = "insert into admin (full_name,username,password) values ('$full_name', '$username','$password')";
+        // $query = "INSERT INTO admin (full_name,username,password) values ('$full_name', '$username','$password')";
         $result= mysqli_query($con, $query) ;
         // or die(mysqli_error());
 

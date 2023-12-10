@@ -1,5 +1,5 @@
-<?php
-//  Connecting to Database 
+<?php 
+// Connecting to Database 
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
@@ -9,6 +9,9 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 {
     die("Failed to Connect!!");
 }
+ 
+
+
     
 
 
